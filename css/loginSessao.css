@@ -1,0 +1,49 @@
+/************************************
+* Este ficheiro contem os estilos   *
+* referentes a loginSessao.html     *
+*************************************/
+html {
+    height: 100%;
+}
+
+/* estilo para o div do conteudo */
+/* especial para a pagina de login */
+#contentLogin {
+	float: left; 
+	width: 100%;
+	height: 74vh;
+	border: solid #0191d8 3px;
+	background: #CCE0FF;
+	padding: auto;
+	min-height: 350px;
+	/*margin-bottom: 2%;*/
+	
+}
+
+/* estilos para o div onde vao estar os dados para o login */
+#login{
+	width: 18%;
+	height: auto;
+	min-width: 120px;
+	border: 3px solid #0191d8;
+	background: none repeat scroll 0% 0% #CCE0FF;
+	padding: 1%;
+	margin: 0 auto;
+}
+
+#divLogin, #loginSelectTerapeuta, #loginPassword{
+	width: 100%;
+	max-width: 182px;
+	margin: 0 auto;
+}
+
+#loginSelectTerapeuta{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+}
+
+#loginButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+}
+

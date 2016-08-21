@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Sinatra - Benvindo! </title>
+	</head>
+		<!-- Importacao dos ficheiros necessarios -->
+		<!-- CSS -->
+		<link href="../css/main.css" rel="stylesheet" type="text/css">
+		<link href="../css/dadosSessao.css" rel="stylesheet" type="text/css">
+		<link href="../css/timePicker/jquery.timeselector.css" rel="stylesheet" type="text/css">
+<!--		<link href="../css/dialog/messi.css" rel="stylesheet" type="text/css"> -->
+		<link href="../css/dialog/dialogSessao.css" rel="stylesheet" type="text/css"> 
+		
+			<!-- custom theme jquery, usei uma versão anterior para suportar o scrolling nas tabs -->
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/cupertino/jquery-ui.css" type="text/css" />
+<!--		<link href="../css/jQueryCustom/jquery-ui-1.10.4.custom.css" rel="stylesheet"> -->
+			<!-- custom font -->
+		<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:700|Amatic+SC:700" rel="stylesheet" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+		<!-- JQuery -->
+<!--		<script type="text/javascript" src="../js/jQuery/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="../js/jQuery/jquery-ui-1.10.4.custom.js"></script> -->
+			<!-- versão anterior para o scrolling das tabs -->
+		<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<!--		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+		
+			<!-- time picker -->
+    		<script src="../js/jQuery/timePicker/jquery.timeselector.js"></script> 
+			<!-- scrollable tabs -->
+		<script type="text/javascript" src="../js/jQuery/jquery.scrollabletab.js"></script>
+			<!-- filter -->
+		<script type="text/javascript" src="../js/jQuery/jquery.select-filter.js"></script>
+			<!-- dialog -->
+<!--		<script type="text/javascript" src="../js/jQuery/dialog/messi.js"></script>-->
+		<script type="text/javascript" src="../js/jQuery/jquery.blockUI.js"></script> 
+		<!-- Scripts -->
+		<script type="text/javascript" src="../js/requests/ajaxRequest.js"></script>
+		<script type="text/javascript" src="../js/sessao/conteudoTabs.js"></script>
+		<script type="text/javascript" src="../js/sessao/dadosSessao.js"></script>
+		<script type="text/javascript" src="../js/sessao/preencheSessao.js"></script>
+		<script type="text/javascript" src="../js/sessao/botoesSessao.js"></script>
+		<script type="text/javascript" src="../js/sessao/funcoesSessao.js"></script>
+		<script type="text/javascript" src="../js/sharedFunctions.js"></script>
+		<script type="text/javascript" src="../js/requests/sessaoRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/sessaoXML.js"></script>
+		<script type="text/javascript" src="../js/requests/terapeutasRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/terapeutasXML.js"></script>
+		<script type="text/javascript" src="../js/requests/criancasRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/criancasXML.js"></script>
+		<script type="text/javascript" src="../js/requests/thumbnailRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/etiquetasXML.js"></script>
+		<script type="text/javascript" src="../js/requests/etiquetasRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/historiaXML.js"></script>
+		<script type="text/javascript" src="../js/requests/historiaRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/gestosXML.js"></script>
+		<script type="text/javascript" src="../js/requests/gestosRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/questionariosXML.js"></script>
+		<script type="text/javascript" src="../js/requests/questionariosRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/perguntasXML.js"></script>
+		<script type="text/javascript" src="../js/requests/perguntasRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/cenaXML.js"></script>
+		<script type="text/javascript" src="../js/requests/cenaRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/sessaoXML.js"></script>
+		<script type="text/javascript" src="../js/requests/sessaoRequests.js"></script>
+
+	<body>
+		<div class="main">
+			<div>
+				<div id="banner">
+					<img src="../imagens/sinatraMainSmall.png" height="50px" alt="logo"/>
+				</div>
+				<div id="logoutDiv">
+					<button id="logoutButton" type="button">Logout</button>
+				</div>
+			</div>
+			<div id="content">
+				<div id="dadosSessao" class="tabs">
+				<ul id="tabUl">
+					<li><a href="#dadosSessaoTerapeuta">Escolher Terapeuta</a></li>
+				</ul>
+				<div id="dadosSessaoTerapeuta">
+					<div class="anteriorSeguinteButtonsDiv">
+						<input type="button" value="Cancelar" id="cancelarTerapeutaButton"/>	
+						<input type="button" value="Seguinte" id="seguinteTerapeutaButton" disabled/>	
+					</div>
+					<div class="contentTabs">
+						<h3>Nome do terapeuta<font color="red">*</font></h3>
+						<select id="listaTerapeutasSessao">
+							<option disabled value='0' selected>Selecione o/a terapeuta</option>
+						</select>
+						<br><br>
+					</div>				
+				</div>
+			</div>
+		</div>
+		<!-- dialogs -->
+		<!-- dialog que indica que (numa sessao presencial) a data escolhida é inferior à data corrente -->
+		<div id="dialogDataIncorrecta" title="Data incorrecta" class="modal" style="display:none; cursor: default">
+			<div id="dataIncorrecta">
+				<br>
+				<p id="mensagemAlternativa">A data que inseriu está incorrecta.</p>
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogDataIncorrecta" value="Ok" /> 
+			</div>
+		</div>
+		<!-- dialog que indica que (numa sessao remota) a data de fim é menor que a data de inicio -->
+		<div id="dialogDataFimMenor" title="Data incorrecta" class="modal" style="display:none; cursor: default">
+			<div id="dataFimMenor">
+				<br>
+				<p id="mensagemAlternativa">A data de fim de sessão indicada tem de ser superior à data de início escolhida.</p>
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogDataFimMenor" value="Ok" /> 
+			</div>
+		</div>
+		<!-- dialog que indica que (numa sessao remota) a data de inicio tem de ser inserida (no caso de se inserir uma data de fim) -->
+		<div id="dialogDataInicioVazia" title="Data incorrecta" class="modal" style="display:none; cursor: default">
+			<div id="dataInicioVazia">
+				<br>
+				<p id="mensagemAlternativa">Tem de inserir uma data de início para a sessão.</p>
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogDataInicioVazia" value="Ok" /> 
+			</div>
+		</div>
+		<!-- Indica que já existe uma história com este nome -->		
+		<div id="dialogNomeHistoriaExistente" title="Nome da história já existe" class="modal" style="display:none; cursor: default">
+			<div id="inputboxesNomeHistoria"></div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogNomeHistoriaExistente" value="Ok" /> 
+			</div>
+		</div>
+		<div id="dialogThumbnailNaoSuportado" title="Ficheiro não suportado" class="modal" style="display:none; cursor: default">
+			<div id="thumbnailNaoSuportado">
+				<br>
+				<p id="mensagemAlternativa">O ficheiro que escolheu não é suportado. Escolha outro.</p>
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogThumbnailNaoSuportado" value="Ok" /> 
+			</div>
+		</div>
+		<div id="dialogEtiquetaHistoriaExistente" title="Etiqueta Existente" class="modal" style="display:none; cursor: default">
+			<div id="etiquetaHistoriaRepetida">
+				<br>
+				<p id="mensagemAlternativa">Etiqueta já existente na lista.<br>Adicione esta etiqueta da lista ou defina uma nova.</p> 
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogEtiquetaHistoriaExistente" value="Ok" /> 
+			</div>
+		</div>
+		<div id="dialogEtiquetaHistoriaExistenteSeleccionada" title="Etiqueta Existente" class="modal" style="display:none; cursor: default">
+			<div id="etiquetaHistoriaExistenteRepetida">
+				<br>
+				<p id="mensagemAlternativa">Etiqueta já foi escolhida para a história.<br>Seleccione outra ou adicione uma nova.</p> 
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogEtiquetaHistoriaExistenteSeleccionada" value="Ok" /> 
+			</div>
+		</div>
+		<!-- Indica que já existe uma cena com este nome -->		
+		<div id="dialogNomeCenaExistente" title="Nome da cena já existe" class="modal" style="display:none; cursor: default">
+			<div id="inputboxesNomeCena"></div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogNomeCenaExistente" value="Ok" /> 
+			</div>
+		</div>
+		<div id="dialogEtiquetaCenaExistente" title="Etiqueta Existente" class="modal" style="display:none; cursor: default">
+			<div id="etiquetaCenaRepetida">
+				<br>
+				<p id="mensagemAlternativa">Etiqueta já existente na lista.<br>Adicione esta etiqueta da lista ou defina uma nova.</p> 
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogEtiquetaCenaExistente" value="Ok" /> 
+			</div>
+		</div>
+		<div id="dialogEtiquetaCenaExistenteSeleccionada" title="Etiqueta Existente" class="modal" style="display:none; cursor: default">
+			<div id="etiquetaCenaExistenteRepetida">
+				<br>
+				<p id="mensagemAlternativa">Etiqueta já foi escolhida para a história.<br>Seleccione outra ou adicione uma nova.</p> 
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogEtiquetaCenaExistenteSeleccionada" value="Ok" /> 
+			</div>
+		</div>
+		<!-- Pedido de nr de gestos na actividade gesto -->		
+		<div id="dialogPedirNrGestos" title="Número de gesto" class="modal" style="display:none; cursor: default">
+			<div id="inputboxes"></div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogPedirNrGestos" value="Ok" /> 
+				<input type="button" id="cancelarDialogPedirNrGestos" value="Cancelar" /> 
+			</div>
+		</div>
+		<!-- Detalhes do numero de repetições do gesto seleccionado -->
+		<div id="dialogNrRepeticoes" title="Número de repetições" class="modal" style="display:none; cursor: default">
+			<div id="inputboxesNrRepeticoes"></div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogNrRepeticoes" value="Ok" />
+			</div> 
+		</div>
+		<!-- Dialog com mensagem a dizer que o gesto já existe, quando se tenta adicionar novo gesto -->
+		<div id="dialogGestoExistente" title="Nome Questionário Existente" class="modal" style="display:none; cursor: default">
+			<div id="nomeGestoRepetido">
+				<br>
+				<p id="mensagemAlternativa">Este gesto já existe.</p> 
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogGestoExistente" value="Ok" /> 
+			</div>
+		</div>
+		<!-- Perguntas do questionário seleccionado -->
+		<div id="dialogPerguntasQuestionario" title="Perguntas no Questionário" class="modal" style="display:none; cursor: default">
+			<div id="inputboxesPerguntas"></div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogPerguntasQuestionario" value="Ok" />
+			</div> 
+		</div>
+		<!-- Detalhes da cena seleccionada da história seleccionada na biblioteca de histórias -->
+		<div id="dialogDetalhesCenasHistoria" title="Cena Seleccionada" class="modal" style="display:none; cursor: default">
+			<div id="inputboxesDetalhesCenasHistoria"></div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogDetalhesCenasHistoria" value="Ok"/>
+			</div> 
+		</div>
+		<!-- Dialog que avisa que se vai mudar o tipo de actividade escolhida inicialmente -->
+		<div id="dialogMudarTipoActividadeAviso" style="display:none; cursor: default"> 
+			<div id="inputBoxMudarTipoActividadeAviso"></div>
+			<div id="dialogButtons">
+				<input type="button" id="simDialogMudarTipoActividadeAviso" value="Sim" /> 
+				<input type="button" id="naoDialogMudarTipoActividadeAviso" value="Não" />
+			</div> 
+		</div>
+		<!-- Detalhes da actividade da cena seleccionada na biblioteca de cenas-->
+		<div id="dialogDetalhesActividadeBibliotecaCenas" style="display:none; cursor: default"> 
+			<div id="inputBoxDetalhesActividadeBibliotecaCenas"></div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogDetalhesActividadeBibliotecaCenas" value="Ok" /> 
+			</div> 
+		</div>  
+		<!-- Dialog com mensagem a dizer que o nome do questionário já existe, quando se tenta adicionar novo questionário -->
+		<div id="dialogQuestionarioExistente" title="Nome Questionário Existente" class="modal" style="display:none; cursor: default">
+			<div id="nomeQuestionarioRepetido">
+				<br>
+				<p id="mensagemAlternativa">Já existe um questionário com este nome.</p> 
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogQuestionarioExistente" value="Ok" /> 
+			</div>
+		</div>
+		<!-- Dialog com mensagem a dizer que a pergunta já existe, quando se tenta adicionar nova pergunta -->
+		<div id="dialogPerguntaExistente" title="Pergunta Existente" class="modal" style="display:none; cursor: default">
+			<div id="nomePerguntaRepetida">
+				<br>
+				<p id="mensagemAlternativa">Já existe a pergunta.</p> 
+				<br>
+			</div>
+			<div id="dialogButtons">
+				<input type="button" id="okDialogPerguntaExistente" value="Ok" /> 
+			</div>
+		</div>
+		<!-- Dialog com uma barra de progresso, quando está a gravar os dados -->
+		<div id="progressDialog" title="A guardar os dados da cena" class="modal" style="display:none; cursor: default">
+			<div id="progressDialogTest"><p id="mensagem">A guardar dados da cena</p></div>
+			<!-- <div id="progressbar"></div>-->
+		</div>
+	</body>
+</html>

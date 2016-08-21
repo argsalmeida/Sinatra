@@ -1,0 +1,53 @@
+var divs = ["#dadosSessaoTerapeuta", "#dadosSessaoCriancas", "#dadosSessaoDataHora", "#dadosSessaoHistoria", "#dadosSessaoNomeHistoria", "#dadosSessaoDescricaoHistoria", "#dadosSessaoThumbnailHistoria", "#dadosSessaoTagsHistoria", "#dadosSessaoBibliotecaHistorias", "#dadosSessaoDetalhesHistoria", "#tabs-11", "#tabs-12", "#tabs-13"];
+
+var labels = ["Escolher Terapeuta", "Escolher Crianças", "Escolher Data/Hora", "Escolher História", "Nome da História", "Descrição da História", "Thumbnail da História", "Tags da História", "Biblioteca de Histórias", "Detalhes História", "Tab 11", "Tab 12", "Tab 13"];
+
+var $dadosSessaoTerapeuta = '<div id="dadosSessaoTerapeuta">' +
+					'<h3>Nome do terapeuta<font color="red">*</font></h3>'+
+						'<select id="listaTerapeutasSessao">' +
+							'<option disabled value="0" selected>Selecione o/a terapeuta</option>' +
+						'</select>' +
+						'<br><br>' +
+					'<input type="button" value="seguinte" class="seguinte"/>' +	
+				'</div>';
+
+var $dadosSessaoCrianca = '<div id="dadosSessaoCriancas">' +
+					'<table width="55%">' +
+						'<tbody>' +
+							'<tr>' +
+								'<td align="center" style="width: 275px;">' +
+									'<h3>Crianças existentes</h3>' +
+										'<select id="listaCriancasExistentes" multiple="multiple">' +
+										'</select>' +
+									'<br><br>' +
+									'<input type="button" id="seleccionarTudoListaCriancasExistentesButton" value="Seleccionar tudo"/>' + 
+									'<input type="button" id="removerTudoListaCriancasExistentesButton" value="Remover Selecção"/>' +
+									'<br><br>' +
+								'</td>' +
+								'<td align="center" valign="center" style="">' +
+									'<input type="button" id="adicionarCriancaListaSessaoButton" value="Adicionar Criança &gt;&gt;">' + 
+									'<br><br>' + 
+									'<input type="button" id="removerCriancaListaSessaoButton" value="&lt;&lt; Retirar Criança">' + 
+								'</td>' + 
+								'<td align="center" style="width: 275px;">' +
+									'<h3>Crianças na sessão<font color="red">*</font></h3>' +
+										'<select id="listaCriancasSessao" multiple="multiple">' +
+										'</select>' +
+										'<br><br>' + 
+											'<input type="button" id="seleccionarTudoListaCriancasSessaoButton" value="Seleccionar tudo">' + 
+											'<input type="button" id="removerTudoListaCriancaSessaoButton" value="Remover Selecção">' + 
+								'</td>' + 
+							'</tr>' +
+						'</tbody>' +
+					'</table>' + 
+					'<input type="button" value="seguinte" class="seguinte"/>' + 
+				'</div>';
+
+var $dadosSessaoDataHora = '<div id="dadosSessaoDataHora">' +
+					'<h3>Marcação da sessão de terapia<font color="red">*</font></h3>' +       	
+					'<strong>Data</strong><font color="red">*</font> <input type="text" id="dataSessao"> &nbsp;' +
+					'<strong>Hora</strong><font color="red">*</font> <input type="text" id="horaSessao"> </br> </br>' +	
+					'<input type="button" value="seguinte" class="seguinte"/>' +	
+				'</div>';
+
+var $dadosSessaoHistoria

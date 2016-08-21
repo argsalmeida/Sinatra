@@ -1,0 +1,124 @@
+var $tabs;
+
+
+
+var taghs = [$dadosSessaoTerapeuta, $dadosSessaoCrianca, $dadosSessaoDataHora, $dadosSessaoHistoria, ];
+
+var aux = 0;
+var opcaoHistoria = "";
+
+var numberTabs = 0;
+var flag = false;
+
+
+$(document).ready(function(){
+$tabs = $('#dadosSessao')
+		.tabs()//jQuery ui tabs
+		.scrollabletab();
+
+$("#radioset").buttonset();
+
+$("#dadosSessaoCriancas").hide();
+$("#dadosSessaoDataHora").hide();
+$("#dadosSessaoHistoria").hide();
+
+$("#dadosSessaoNomeHistoria").hide();
+$("#dadosSessaoDescricaoHistoria").hide();
+$("#dadosSessaoThumbnailHistoria").hide();
+$("#dadosSessaoTagsHistoria").hide();
+
+$("#dadosSessaoBibliotecaHistorias").hide();
+$("#dadosSessaoDetalhesHistoria").hide();
+
+
+aux++;
+numberTabs++;
+
+	$('.seguinte').click(function(){
+		//Add new tab
+		if(aux < 13){
+			var label = labels[aux];
+if(flag == true) 	var content = divcosias; 
+else	{		var content = $(divs[aux]);
+			content.show();}
+			$tabs.trigger('addTab',[label,content]);
+			aux++;
+			numberTabs++;
+			if(opcaoHistoria == "novaHistoria" && aux == 8)
+				aux = 10;
+		}
+	});
+
+	$('#radio1').bind('click', function(){
+		if(opcaoHistoria == "bibliotecaHistorias")
+			removeTabs();
+		opcaoHistoria = "novaHistoria";
+			var label = labels[aux];
+if(flag == true) 	var content = divcosias; 
+else	{		var content = $(divs[aux]);
+			content.show();}
+			$tabs.trigger('addTab',[label,content]);
+			aux++;
+			numberTabs++;
+//$tabs.tabs( 'add', divs[aux], labels[aux]);
+//$(divs[aux]).show();
+//console.log("divs[aux]: " + divs[aux]);
+//console.log($("#dadosSessao").tabs('option', 'selected'));
+/*		var label = labels[aux];
+console.log("label");
+console.log(label);
+		var content = $(divs[aux]);
+console.log("content");
+console.log(content);
+		content.show();
+		$tabs.trigger('addTab',[label,content]);*/
+//console.log("divs[aux]: " + $(divs[aux]).text());
+		aux++;
+		numberTabs++;
+	});
+
+	$('#radio2').bind('click', function(){
+		if(opcaoHistoria == "novaHistoria")
+			removeTabs();
+		opcaoHistoria = "bibliotecaHistorias";
+		aux = 8;
+			var label = labels[aux];
+if(flag == true) 	var content = divcosias; 
+else{			var content = $(divs[aux]);
+			content.show();}
+			$tabs.trigger('addTab',[label,content]);
+			aux++;
+			numberTabs++;
+//		$tabs.tabs( 'add', divs[aux], labels[aux]);
+//		$(divs[aux]).show();	
+//console.log("divs[aux]: " + divs[aux]);
+//console.log($("#dadosSessao").tabs('option', 'selected'));
+//console.log("divs[aux]: " + $(divs[aux]).text());
+		aux++;
+		numberTabs++;
+	});
+});
+
+function removeTabs(){
+if(opcaoHistoria == "bibliotecaHistorias"){
+//	console.log("divs[bib]: " + divs[numberTabs+3]);
+flag = true;
+	$(divs[numberTabs+3]).hide();
+	$tabs.tabs("remove", (numberTabs-1));
+	aux = 4;
+	numberTabs--;
+}
+if(opcaoHistoria == "novaHistoria"){
+//	console.log("divs[nova]: " + divs[numberTabs-1]);
+flag = true;
+	$(divs[numberTabs-1]).hide();
+	$tabs.tabs("remove", (numberTabs-1));
+	aux = 4;
+	numberTabs--;
+}
+
+//$('#tabs .ui-tabs-selected').index();
+	//var index = $('#dadosSessao ul').index($('#dadosSessaoDataHora'));
+//	console.log(index);
+
+}

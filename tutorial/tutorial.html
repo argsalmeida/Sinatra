@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Sinatra - Benvindo! </title>
+    </head>
+    <!-- Importacao dos ficheiros necessarios -->
+    <!-- CSS -->
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link href="../css/tutorial.css" rel="stylesheet" type="text/css">
+    <!-- custom theme jquery -->
+    <link href="../css/jQueryCustom/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+    <!-- custom font -->
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:700|Amatic+SC:700" rel="stylesheet" type="text/css" />
+    <!-- JQuery -->
+    <script type="text/javascript" src="../js/jQuery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../js/jQuery/jquery-ui-1.10.4.custom.js"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="../js/tutorial/tutorial.js"></script>
+    <body>
+        <div class="main">
+            <div id="banner">
+                <img src="../imagens/sinatraMain.png" height="125px" alt="logo"/>
+            </div>
+            <div id="contentTutorial">
+                <div id="indiceTutorial">
+                    <ul> 
+                        <li class="black" id="login">Login</li> 
+                        <li class="black" id="sessoesRealizar">Sessões a realizar</li> 
+                        <ul style="display: block;">  
+                            <li class="black" id="sessoesRealizarPlay">Play</li> 
+                            <li class="black" id="sessoesRealizarEditarSessao">Editar Sessão</li> 
+                            <li class="black" id="sessoesRealizarRemoverSessao">Remover Sessão</li> 
+                            <li class="black" id="sessoesRealizarDuplicarSessao">Duplicar Sessão</li> 
+                            <li class="black" id="sessoesRealizarAdicionarSessao">Adicionar Sessão</li> 
+                        </ul>
+                        
+                        <li class="black" id="historicoSessoes">Histórico de Sessões</li> 
+                        <ul style="display: block;">  
+                            <li class="black" id="historicoSessoesDuplicarSessao">Duplicar Sessão</li> 
+                            <li class="black" id="historicoSessoesRegistosSessao">Registos da Sessão</li> 
+                        </ul>
+                        
+                        <li class="black" id="terapeutas">Terapeutas</li> 
+                        <ul style="display: block;">  
+                            <li class="black" id="terapeutasEditarTerapeuta">Editar Terapeuta</li> 
+                            <li class="black" id="terapeutasRemoverTerapeuta">Remover Terapeuta</li> 
+                            <li class="black" id="terapeutasAdicionarTerapeuta">Adicionar Terapeuta</li> 
+                        </ul>
+                        
+                        <li class="black" id="criancas">Crianças</li> 
+                        <ul style="display: block;">  
+                            <li class="black" id="criancasEditarCrianca">Editar Criança</li> 
+                            <li class="black" id="criancasRemoverCrianca">Remover Criança</li> 
+                            <li class="black" id="criancasRegistosCrianca">Registos da Criança</li> 
+                            <li class="black" id="criancasAdicionarCrianca">Adicionar Criança</li> 
+                        </ul>
+                        
+                        <li class="black" id="adicionarSessao">Adicionar Sessão</li> 
+                        <ul>
+                            <li class="black" id="escolherTerapeuta">Escolher Terapeuta</li> 
+                            <li class="black" id="escolherCriancas">Escolher Crianças</li>
+                            <ul>
+                                <li class="black" id="escolherCriancasAdicionarCrianca">Adicionar Criança >></li> 
+                                <li class="black" id="escolherCriancasRetirarCrianca"><< Retirar Criança</li> 
+                                <li class="black" id="escolherCriancasSeleccionarTudo">Seleccionar Tudo</li> 
+                                <li class="black" id="escolherCriancasRemoverSeleccao">Remover Selecção</li> 
+                            </ul>
+                            <li class="black" id="tipoSessao">Tipo de Sessão</li> 
+                            <li class="black" id="escolherDataHora">Escolher Data/Hora</li> 
+
+                            <li class="black" id="tipoExercicio">Tipo de Exercício</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="tipoExercicioCoDraw">CoDraw</li> 
+                                <li class="black" id="tipoExercicioHistoria">História</li> 
+                            </ul>      
+
+                            <li class="black" id="escolherHistoria">Escolher História</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="escolherHistoriaCriarNovaHistoria">Criar Nova História</li> 
+                                <li class="black" id="escolherHistoriaEscolherHistoriaBiblioteca">Escolher História da Biblioteca</li> 
+                            </ul>
+
+                            <li class="black" id="bibliotecaHistorias">Biblioteca de Histórias</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="bibliotecaHistoriasAlterar">Alterar</li> 
+                                <li class="black" id="bibliotecaHistoriasCriarSessao">Criar Sessão</li> 
+                            </ul>
+
+                            <li class="black" id="nomeHistoria">Nome da História</li> 
+                            <li class="black" id="imagemHistoria">Imagem da História</li> 
+
+                            <li class="black" id="etiquetasHistoria">Etiquetas da História</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="etiquetasHistoriaAdicionar">Adicionar</li> 
+                                <li class="black" id="etiquetasHistoriaAdicionarEtiqueta">Adicionar Etiqueta >></li> 
+                                <li class="black" id="etiquetasHistoriaRetirarEtiqueta"><< Retirar Etiqueta</li> 
+                                <li class="black" id="etiquetasHistoriaSeleccionarTudo">Seleccionar Tudo</li> 
+                                <li class="black" id="etiquetasHistoriaRemoverSeleccao">Remover Selecção</li> 
+                            </ul>
+
+                            <li class="black" id="escolherCena">Escolher Cena</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="escolherCenaCriarNovaCena">Criar Nova Cena</li> 
+                                <li class="black" id="escolherCenaEscolherCenaBiblioteca">Escolher Cena da Biblioteca</li> 
+                                <li class="black" id="escolherCenaCriarSessao">Criar Sessão</li> 
+                            </ul>
+
+                            <li class="black" id="bibliotecaCenas">Biblioteca de Cenas</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="bibliotecaCenasAlterar">Alterar</li> 
+                                <li class="black" id="bibliotecaCenasUsar">Usar</li> 
+                            </ul>
+
+                            <li class="black" id="nomeCena">Nome da Cena</li> 
+                            <li class="black" id="descricaoCena">Descrição da Cena</li> 
+
+                            <li class="black" id="etiquetasCena">Etiquetas da Cena</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="etiquetasCenaAdicionar">Adicionar</li> 
+                                <li class="black" id="etiquetasCenaAdicionarEtiqueta">Adicionar Etiqueta >></li> 
+                                <li class="black" id="etiquetasCenaRetirarEtiqueta"><< Retirar Etiqueta</li> 
+                                <li class="black" id="etiquetasCenaSeleccionarTudo">Seleccionar Tudo</li> 
+                                <li class="black" id="etiquetasCenaRemoverSeleccao">Remover Selecção</li> 
+                            </ul>
+
+                            <li class="black" id="introducaoActividade">Introdução à Actividade</li> 
+
+                            <li class="black" id="escolherActividade">Escolher Actividade</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="escolherActividadeGesto">Gesto</li> 
+                                <li class="black" id="escolherActividadeQuestionario">Questionário</li> 
+                            </ul>
+
+                            <li class="black" id="escolherGesto">Escolher Gesto</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="escolherGestoEscolher">Escolher</li> 
+                                <li class="black" id="escolherGestoNovoGesto">Novo Gesto</li> 
+                                <li class="black" id="escolherGestoRemover">Remover</li> 
+                            </ul>
+
+                            <li class="black" id="nomeGesto">Nome do Gesto</li> 
+                            <li class="black" id="numeroGestos">Número de Gestos</li> 
+
+                            <li class="black" id="escolherQuestionario">Escolher Questionário</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="escolherQuestionarioEscolher">Escolher</li> 
+                                <li class="black" id="escolherQuestionarioNovoQuestionario">Novo Questionário</li> 
+                                <li class="black" id="escolherQuestionarioDetalhesQuestionario">Detalhes do Questionário</li> 
+                                <li class="black" id="escolherQuestionarioRemover">Remover</li> 
+                            </ul>
+
+                            <li class="black" id="nomeQuestionario">Nome do Questionário</li> 
+
+                            <li class="black" id="perguntasQuestionario">Perguntas do Questionário</li> 
+                            <ul style="display: block;">  
+                                <li class="black" id="perguntasQuestionarioEscolher">Escolher</li> 
+                                <li class="black" id="perguntasQuestionarioNovaPergunta">Nova Pergunta</li> 
+                                <li class="black" id="perguntasQuestionarioRemover">Remover</li> 
+                            </ul>
+                            <li class="black" id="reforcoPositivo">Reforço Positivo</li> 
+                            <li class="black" id="reforcoNegativo">Reforço Negativo</li> 
+                            <li class="black" id="repeticaoCena">Repetição Cena</li> 
+                            <li class="black" id="pontuacao">Pontuação</li> 
+                        </ul>
+                        <li class="black" id="playerTerapeuta">Player Terapeuta</li> 
+                        <li class="black" id="playerCrianca">Player Criança</li> 
+                    </ul>
+                </div>
+                <div id="conteudo">
+                    <div class="contents" id="loginContent" hidden>
+                        <p> Para iniciar a aplicação é necessário fazer um login. Para isso, entra-se na página inicial da aplicação. </p>
+                        <p> Aqui, seleciona-se o nome do terapeuta / professor / técnico e a respetiva password.
+                            De seguida, clica-se no botão de login para entrar na aplicação. </p>
+                        <div class="images">
+                            <img class="screenshot" id="loginImagem" src="../imagensTutorial/loginSessao.png">
+                        </div>
+                        <p> Ao fazer login é apresentado um ecrã com vários separadores: </p>
+                            <ul> 
+                                <li>Sessões a realizar</li>
+                                <li>Histórico de Sessões</li>
+                                <li>Terapeutas</li>
+                                <li>Crianças</li>
+                            </ul>
+                    </div>
+                    <div class="contents" id="sessoesArealizarContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshot" id="sessoesArealizarImagem" src="../imagensTutorial/ListaSessoes-SessoesRealizar.png">
+                        </div>
+                        <p> Aqui pode-se consultar as sessões que vão ser realizadas (a azul) e as sessões que foram marcadas, mas não realizadas e já passou a data para as quais foram marcas (a vermelho). </p>
+                        <p> Na lista de sessões a marcar, existe alguma informação sobre a sessão: </p>
+                        <ul>
+                            <li>O nome do terapeuta que vai realizar a sessão</li>
+                            <li>Data e hora para as quais a sessão está marcada</li>
+                            <li>As crianças que vão participar na sessão</li>
+                            <li>O tipo de sessão (neste momento, só são suportadas sessões presenciais)</li>
+                            <li>O tipo de exercício escolhido para a sessão</li>
+                            <li>Botões de manipulação da sessão:
+                                <ul>
+                                    <li id="sessoesRealizarPlay2">Play</li>
+                                    <li id="sessoesRealizarEditarSessao2">Editar Sessão</li>
+                                    <li id="sessoesRealizarRemoverSessao2">Remover Sessão</li>
+                                    <li id="sessoesRealizarDuplicarSessao2">Duplicar Sessão </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contents" id="sessoesArealizarPlayContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="sessoesArealizarPlayImagem" src="../imagensTutorial/botãoPlay.png">
+                        </div>
+                        <p> Este botão vai ser utilizado para iniciar o player da sessão. </p>
+                        <p> Ver: <input type="button" id="verPlayerTerapeuta" value="Player Terapeuta"></p>
+                    </div>
+                    <div class="contents" id="sessoesArealizarEditarSessaoContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="sessoesArealizarEditarSessaoImagem" src="../imagensTutorial/botãoEditar.png">
+                        </div>
+                        <p>Ao clicar neste botão, é possível alterar a sessão, será mostrado o mesmo ecrã que o botão “Adicionar Sessão”, mas com os dados já preenchidos.</p>
+                    </div>
+                    <div class="contents" id="sessoesArealizarRemoverSessaoContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="sessoesArealizarRemoverSessaoImagem" src="../imagensTutorial/botãoRemover.png">
+                        </div>
+                        <p>Neste botão, remove-se a sessão correspondente. É mostrado um pop-up de confirmação.</p>
+                        <div class="images">
+                            <img class="screenshotPopUp" id="sessoesArealizarDuplicarSessaoPopUp" src="../imagensTutorial/ListaSessoes-SessoesRealizar-RemoverPopUp.png">
+                        </div>
+                    </div>
+                    <div class="contents" id="sessoesArealizarDuplicarSessaoContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="sessoesArealizarDuplicarSessaoImagem" src="../imagensTutorial/botãoDuplicar.png">
+                        </div>
+                        <p>Este botão permite duplicar uma sessão já marcada / realizada. É apresentado um pop-up com os dados da sessão e o utilizador preenche apenas a data e a hora a que se vai realizar a nova sessão.</p>
+                    </div>
+                    <div class="contents" id="sessoesArealizarAdicionarSessaoContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="sessoesArealizarAdicionarSessaoImagem" src="../imagensTutorial/botãoAdicionarSessão.png">
+                        </div>
+                        <p>Existe também um botão para adicionar uma nova sessão.</p>
+                        <p> Ver: <input type="button" id="verAdicionarSessao" value="Adicionar Sessão"></p>
+                    </div>
+                    
+                    <div class="contents" id="historicoSessoesContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshot" id="historicoSessoesImagem" src="../imagensTutorial/ListaSessoes-HistoricoSessoes.png">
+                        </div>
+                        <p> Aqui estão listadas as sessões que foram realizadas. </p>
+                        <p> Tal como no separador “Sessões a realizar”, aqui são mostradas algumas informações sobre a sessão: </p>
+                        <ul>
+                            <li>O nome do terapeuta que vai realizar a sessão</li>
+                            <li>Data e hora para as quais a sessão foi marcada</li>
+                            <li>As crianças que participaram na sessão</li>
+                            <li>O tipo de sessão (neste momento, só são suportadas sessões presenciais)</li>
+                            <li>O tipo de exercício escolhido para a sessão</li>
+                            <li>Botões de manipulação da sessão:
+                                <ul>
+                                    <li>Duplicar Sessão </li>
+                                    <li>Registos da Sessão</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contents" id="historicoSessoesDuplicarSessaoContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="historicoSessoesDuplicarSessaoImagem" src="../imagensTutorial/botãoDuplicar.png">
+                        </div>
+                        <p>Este botão permite duplicar uma sessão já marcada / realizada. É apresentado um pop-up com os dados da sessão e o utilizador preenche apenas a data e a hora a que se vai realizar a nova sessão.</p>
+                    </div>
+                    <div class="contents" id="historicoSessoesRegistosSessaoContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="HistoricoSessoesRegistosSessaoImagem" src="../imagensTutorial/botãoRegistos.png">
+                        </div>
+                        <p>Este botão passa para um ecrã com os registos da sessão.</p>
+                        
+                        <h3> INCOMPLETO ... </h3>
+                    </div>
+                    <div class="contents" id="terapeutasContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshot" id="terapeutasImagem" src="../imagensTutorial/ListaSessoes-Terapeutas.png">
+                        </div>
+                        <p> Neste separador é possível consultar todos os terapeutas que interagem com a aplicação. </p>
+                        <p> A lista de terapeutas inclui: </p>
+                        <ul>
+                            <li>O nome do terapeuta</li>
+                            <li>A foto do terapeuta</li>
+                            <li>Botões de manipulação de terapeutas:
+                                <ul>
+                                    <li>Editar Terapeuta</li>
+                                    <li>Remover Terapeuta</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contents" id="terapeutasEditarContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="terapeutasEditarImagem" src="../imagensTutorial/botãoEditar.png">
+                        </div>
+                        <p>Este botão só é apresentado ao terapeuta que fez o login. E, tal como o nome indica, serve para alterar os dados do terapeuta. Ao clicar neste botão aparece um pop-up com os dados atuais do terapeuta.</p>
+                        <div class="images">
+                            <img class="screenshotPopUp" id="terapeutasEditarPopUp" src="../imagensTutorial/ListaSessoes-Terapeutas-EditarTerapeuta.png">
+                        </div>
+                    </div>
+                    <div class="contents" id="terapeutasRemoverContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="terapeutasRemoverImagem" src="../imagensTutorial/botãoRemover.png">
+                        </div>
+                        <p>Este botão serve para remover um terapeuta. É apresentado um pop-up de confirmação quando se clica neste botão.</p>
+                        <div class="images">
+                            <img class="screenshotPopUp" id="terapeutasRemoverPopUp" src="../imagensTutorial/ListaSessoes-Terapeutas-RemoverTerapeuta.png">
+                        </div>
+                    </div>
+                    <div class="contents" id="terapeutasAdicionarTerapeutaContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="terapeutasAdicionarTerapeutaImagem" src="../imagensTutorial/botãoAdicionarTerapeuta.png">
+                        </div>
+                            <p>Também é possível adicionar um novo terapeuta através do botão “Adicionar Terapeuta”. Aqui é mostrado um pop-up com os campos a serem preenchidos.</p>
+                        <div class="images">
+                            <img class="screenshotPopUp" id="terapeutasAdicionarTerapeutaPopUp" src="../imagensTutorial/ListaSessoes-Terapeutas-AdicionarTerapeuta.png">
+                        </div>
+                    </div>
+                    <div class="contents" id="criancasContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshot" id="criancasImagem" src="../imagensTutorial/ListaSessoes-Crianças.png">
+                        </div>
+                        <p> Neste separador é possível consultar todas as crianças que existem na aplicação. </p>
+                        <p> A lista de crianças inclui: </p>
+                        <ul>
+                            <li>O nome da criança</li>
+                            <li>A foto da criança</li>
+                            <li>Data de Nascimento</li>
+                            <li>Observações</li>
+                            <li>Password</li>
+                            <li>Botões de manipulação de crianças:
+                                <ul>
+                                    <li>Editar Criança</li>
+                                    <li>Remover Criança</li>
+                                    <li>Registos da Criança</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contents" id="criancasEditarContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="criancasEditarImagem" src="../imagensTutorial/botãoEditar.png">
+                        </div>
+                        <p>Este botão serve para alterar os dados da criança. Ao clicar neste botão aparece um pop-up com os dados atuais da criança.</p>
+                        <div class="images">
+                            <img class="screenshotPopUp" id="criancasEditarPopUp" src="../imagensTutorial/ListaSessoes-Crianças-EditarCriança.png">
+                        </div>
+                    </div>
+                    <div class="contents" id="criancasRemoverContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="criancasRemoverImagem" src="../imagensTutorial/botãoRemover.png">
+                        </div>
+                        <p>Este botão serve para remover uma criança. É apresentado um pop-up de confirmação quando se clica neste botão.</p>
+                        <div class="images">
+                            <img class="screenshotPopUp" id="criancasRemoverPopUp" src="../imagensTutorial/ListaSessoes-Crianças-RemoverCriança.png">
+                        </div>
+                    </div>
+                    <div class="contents" id="criancasRegistosContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="criancasRegistosImagem" src="../imagensTutorial/botãoRegistos.png">
+                        </div>
+                        <p>Aqui vai ser possível visualizar os registos da criança.</p>
+
+                        <h3> INCOMPLETO ... </h3>
+                    </div>
+                    <div class="contents" id="criancasAdicionarCriançaContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="criancasAdicionarCriancaImagem" src="../imagensTutorial/botãoAdicionarCriança.png">
+                        </div>
+                        <p>Também é possível adicionar um novo criança através do botão “Adicionar Criança”. Aqui é mostrado um pop-up com os campos a serem preenchidos.</p>
+                        <div class="images">
+                            <img class="screenshotPopUp" id="criancasAdicionarCriancaPopUp" src="../imagensTutorial/ListaSessoes-Crianças-AdicionarCriança.png">
+                        </div>
+                    </div>
+                    <div class="contents" id="adicionarSessaoContent" hidden>
+                        <p> Ao clicar no botão “Adicionar Sessão” que se encontra no separador “Sessões a realizar”, é direcionado para um wizard que permite adicionar uma nova sessão. </p>
+                        <p> A sessão é feita passo a passo, só sendo possível passar ao próximo passo quando os dados são preenchidos corretamente. </p>
+                    </div>
+                    <div class="contents" id="adicionarSessaoEscolherTerapeutaContent" hidden>
+                        <p> Neste separador, escolhe-se o nome do terapeuta que vai realizar a sessão. Por defeito, é escolhido o terapeuta que fez login. </p>
+                        <div class="images">
+                            <img class="screenshot" id="adicionarSessaoEscolherTerapeutaImagem" src="../imagensTutorial/AdicionarSessão-EscolherTerapeuta.png">
+                        </div>
+                        <p> Quando as condições são satisfeitas o botão “Seguinte” fica ativado e é possível continuar para o próximo passo. </p>
+                    </div>
+                    <div class="contents" id="adicionarSessaoEscolherCriancasContent" hidden>
+                        <p> Permite escolher as crianças que vão participar na sessão. Tem que se escolher pelo menos uma criança para poder continuar a criar a sessão. </p>
+                        <div class="images">
+                            <img class="screenshot" id="adicionarSessaoEscolherCriancasImagem" src="../imagensTutorial/AdicionarSessão-EscolherCrianças.png">
+                        </div>
+                        <p> Como se vê na imagem, a caixa de texto da esquerda contém o nome de todas as crianças que foram inseridas na aplicação. </p>
+                        <p> No lado esquerdo, vão-se ter as crianças que vão participar na sessão. </p>
+                        <p> Para isso, tem que se escolher as crianças que estão na lista do lado esquerdo e adicioná-las à lista do lado direito.  </p>
+                        <p> Os botões de manipulação são: </p>
+                        <ul>
+                            <li>Adicionar Criança</li>
+                            <li>Remover Criança</li>
+                            <li>Seleccionar Tudo</li>
+                            <li>Remover Selecção</li>
+                        </ul>
+                        <p></p>
+                        <p> Para adicionar ou remover uma criança, pode-se duplo clicar no nome da mesma e esta é adicionada à lista oposta. </p>
+                        <p> Para selecionar várias crianças, pode-se usar a tecla Shift (permite selecionar várias crianças sem estas estarem seguidas na lista) ou clicar numa criança e arrastar com o rato (seleciona as crianças que estão seguidas na lista).</p>
+                        <p> Também se podem filtrar as crianças pelo nome para ser mais fácil selecioná-las, para isso escreve-se o nome (ou parte dele) na caixa de texto que fica situada em cima da lista das crianças existentes. </p>
+                        <p> Quando existir pelo menos uma criança na lista de crianças da sessão, o botão seguinte vai ser ativado e pode-se seguir para o próximo passo.</p>
+                    </div> 
+                    <div class="contents" id="adicionarSessaoEscolherCriancasAdicionarCriancaContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="adicionarSessaoEscolherCriancasAdicionarCriancaImagem" src="../imagensTutorial/botãoEscolherCriancaAdicionarCrianca.png">
+                        </div>
+                        <p> Este botão permite adicionar uma criança à lista das crianças na sessão. </p>
+                    </div>
+                    <div class="contents" id="adicionarSessaoEscolherCriancasRetirarCriancaContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="adicionarSessaoEscolherCriancasRetirarCriancaImagem" src="../imagensTutorial/botãoEscolherCriancaRetirarCrianca.png">
+                        </div>
+                        <p> Retira uma criança que está na sessão. </p>
+                    </div>
+                    <div class="contents" id="adicionarSessaoEscolherCriancasSeleccionarTudoContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="adicionarSessaoEscolherCriancasSeleccionarTudoImagem" src="../imagensTutorial/botãoEscolherCriancaSeleccionarTudo.png">
+                        </div>
+                        <p> Seleciona todas as crianças que estão lista correspondente. </p>
+                    </div>
+                    <div class="contents" id="adicionarSessaoEscolherCriancasRemoverSeleccaoContent" hidden>
+                        <p></p>
+                        <div class="images">
+                            <img class="screenshotButtons" id="adicionarSessaoEscolherCriancasRemoverSeleccaoImagem" src="../imagensTutorial/botãoEscolherCriancaRemoverSelecção.png">
+                        </div>
+                        <p> Remove a seleção feita na lista correspondente. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

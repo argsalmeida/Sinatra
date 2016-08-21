@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Sinatra - Player! </title>
+	</head>
+		<!-- Importacao dos ficheiros necessarios -->
+		<!-- CSS -->
+		<link href="../css/player.css" rel="stylesheet" type="text/css">
+			<!-- custom theme jquery -->
+		<link href="../css/jQueryCustom/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+			<!-- custom font -->
+		<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:700|Amatic+SC:700" rel="stylesheet" type="text/css" />
+		<!-- JQuery -->
+		<script type="text/javascript" src="../js/jQuery/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="../js/jQuery/jquery-ui-1.10.4.custom.js"></script>
+		<!-- Scripts -->
+		<script type="text/javascript" src="../js/players/player.js"></script>
+		<script type="text/javascript" src="../js/requests/ajaxRequest.js"></script>
+		<script type="text/javascript" src="../js/players/playClienteCrianca.js"></script>  
+		<script type="text/javascript" src="../js/requests/terapeutasRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/terapeutasXML.js"></script>
+		<script type="text/javascript" src="../js/requests/sessaoRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/sessaoXML.js"></script>
+
+
+	<body>
+		<div id="playerDiv">
+			<div id="dialogLoginPlayer" title="Login">
+				<p><strong>Nome do terapeuta:</strong><font color="red">*</font></br>
+					<select id="usernamePlayer">
+						<option disabled selected>Seleccione o/a terapeuta</option>
+					</select>
+				</p>
+				<p><strong>Password:</strong><font color="red">*</font><br>
+					<input type="password" name="password" id="passwordPlayer" maxlength="255"/>
+				</p>
+			</div>
+			<!-- divs que vão mostrar as mensagens de bem-vindo e ligação perdida -->
+			<div id="iniciaPlayerDiv" hidden><p>Aguarde</div>
+			<div id="mensagemBemVindoDiv" hidden><p>Bem-vindo! <br> Aguarde o início da sessão</div>
+			<div id="mensagemCoDraw" hidden><p>Sessão iniciada no CoDraw</div>
+			<div id="mensagemLigacaoPerdidaDiv" hidden>
+				<p>Oops.. A ligação com o terapeuta foi interrompida.<br> Espera um pouco... </p>
+				<br>
+				<img id="imagemLigacaoPerdida" src="../imagens/oops.png">
+			</div>
+			<!-- div que contém os videos para a introducao -->
+			<div id="videoSessaoPlayerDiv" hidden>
+<!--				<video id='videoPlayer'>
+					 <source id='srcmp4' type="video/mp4">
+					<source id='srcwebm' type="video/webm">
+				</video>
+-->
+			</div>
+			<!-- div que contém as imagens para a introducao -->
+			<div id="imagemSessaoPlayerDiv" hidden>
+				<img id='imagemPlayer' />
+			</div>
+		</div>
+	</body>
+</html>
+
+
+				
+				
+				
+				
+
+
+
+  
+<!--    <script type="text/javascript" src="../js/url.js"></script>
+    <script type="text/javascript" src="../js/xml.js"></script>
+    <script type="text/javascript" src="../js/time.js"></script> 
+    
+        <script type="text/javascript" src="../js/functions.js"></script> 
+    <script type="text/javascript" src="../js/crianca/criancaSessao.js"></script> 
+    <script type="text/javascript" src="../js/player/player.js"></script>
+    <script type="text/javascript" src="../js/sessao/clienteCrianca.js"></script>  
+
+    
+    
+  </head>
+-->
+<!-- <body>
+
+<div id="player"></div>
+
+<div id="dialog" title="Login">
+  <form id="login" method="post">
+	<select id="user">
+		<option disabled selected>Selecione o/a terapeuta</option>
+	</select></p>
+  <strong>Password:</strong> <input type="password" id="pass"> &nbsp;
+  </form>
+
+</div>
+
+
+<div id="dialog-message" title="Bem-vindo">
+</div>
+
+
+</body>
+</html> -->

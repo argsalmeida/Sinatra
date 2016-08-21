@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Sinatra - Benvindo! </title>
+    </head>
+    <!-- Importacao dos ficheiros necessarios -->
+    <!-- CSS -->
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link href="../css/registos.css" rel="stylesheet" type="text/css">
+    <link type="text/css" href="../css/DDChart/ddchart.css" rel="stylesheet">
+    <!-- custom theme jquery -->
+    <link href="../css/jQueryCustom/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+    <!-- custom font -->
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:700|Amatic+SC:700" rel="stylesheet" type="text/css" />
+    <!-- JQuery -->
+    <script type="text/javascript" src="../js/jQuery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../js/jQuery/jquery-ui-1.10.4.custom.js"></script>
+    <!-- DDChart -->
+    <script language="javascript" type="text/javascript" src="../js/DDChart/jquery.tooltip.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/DDChart/jquery.ddchart.js?1=1"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="../js/registos/registosSessao.js"></script>
+    <script type="text/javascript" src="../js/requests/ajaxRequest.js"></script>
+    <script type="text/javascript" src="../js/requests/historicoRequests.js"></script>
+    <script type="text/javascript" src="../js/requests/xml/historicoXML.js"></script>
+    <script type="text/javascript" src="../js/requests/registosRequests.js"></script>
+    <script type="text/javascript" src="../js/requests/xml/registosXML.js"></script>
+    <script type="text/javascript" src="../js/requests/cenaRequests.js"></script>
+    <script type="text/javascript" src="../js/requests/xml/cenaXML.js"></script>
+    <body>
+        <div class="main">
+            <div>
+                <div id="banner">
+                    <img src="../imagens/sinatraMainSmall.png" height="50px" alt="logo"/>
+                </div>
+                <div id="logoutDiv">
+                    <input id="logoutButton" type="button" value="Logout">
+                </div>
+            </div>
+            <div id="contentRegistos">
+                <div id="buttonsDiv">
+                    <input id="resumoSessaoButton" type="button" value="Resumo">
+                    <input id="dadosSessaoButton" type="button" value="Dados da Sessão">
+                    <input id="logAnotacoesButton" type="button" value="Log/Anotações">
+                    <input id="graficosSessaoButton" type="button" value="Gráficos">
+                    
+                </div>
+                <div id="todosDadosSessaoDiv">
+                    <div id="resumoSessaoDiv" hidden>
+                        <p> Nome do Terapeuta: 
+                            <input type="text" id="nomeTerapeutaSessao" readonly/>
+                        </p>
+                        <p id="nomeCriancasSessaoText"> Nome das Crianças: 
+                            <textarea type="text" id="nomeCriancasSessao" readonly></textarea>
+                        </p>
+                        <p> Tipo de Exercício: 
+                            <input type="text" id="tipoExercicioSessao" readonly/>
+                        </p>
+                    </div>
+                    <div id="logAnotacoesDiv" hidden>
+                        <div id="logColuna"></div>
+                        <div id="anotacoesColuna"></div>
+                    </div>
+                    <div id="dadosSessaoDiv" hidden>
+                        <div id="dadosDiv"></div>
+                    </div>
+                </div>
+                <!-- Gráficos -->
+                <div id="graphsDiv" hidden>
+                    <div id="chart_div_static">
+                        <div id="loading-Notification_static" class="chart_loading ui-widget ui-widget-content ui-state-error" style="display: none;">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

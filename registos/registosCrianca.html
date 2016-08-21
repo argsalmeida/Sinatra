@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Sinatra - Benvindo! </title>
+    </head>
+    <!-- Importacao dos ficheiros necessarios -->
+    <!-- CSS -->
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link href="../css/registos.css" rel="stylesheet" type="text/css">
+    <link type="text/css" href="../css/DDChart/ddchart.css" rel="stylesheet">
+    <!-- datatable -->
+    <link href="../css/dataTables/demo_page.css" rel="stylesheet" type="text/css">
+    <link href="../css/dataTables/demo_table.css" rel="stylesheet" type="text/css">
+    <!-- custom font -->
+    <!-- custom theme jquery -->
+    <link href="../css/jQueryCustom/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+    <!-- custom font -->
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:700|Amatic+SC:700" rel="stylesheet" type="text/css" />
+    <!-- JQuery -->
+    <script type="text/javascript" src="../js/jQuery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../js/jQuery/jquery-ui-1.10.4.custom.js"></script>
+    <!-- DDChart -->
+    <script language="javascript" type="text/javascript" src="../js/DDChart/jquery.tooltip.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/DDChart/jquery.ddchart.js?1=1"></script>
+    <!-- datatable -->
+    <script type="text/javascript" src="../js/dataTables/jquery.dataTables.js"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="../js/registos/registosCrianca.js"></script>
+    <script type="text/javascript" src="../js/requests/ajaxRequest.js"></script>
+    <script type="text/javascript" src="../js/requests/criancasRequests.js"></script>
+    <script type="text/javascript" src="../js/requests/xml/criancasXML.js"></script>
+    <body>
+        <div class="main">
+            <div>
+                <div id="banner">
+                    <img src="../imagens/sinatraMainSmall.png" height="50px" alt="logo"/>
+                </div>
+                <div id="logoutDiv">
+                    <input id="logoutButton" type="button" value="Logout">
+                </div>
+            </div>
+            <div id="contentRegistos">
+                <div id="nomeCriancaDiv">
+                    <h3 id="nomeCrianca"></h3>
+                </div>
+                <div id="buttonsDiv">
+                    <input id="listaSessoesButton" type="button" value="Sessões">
+                    <input id="listaCenasButton" type="button" value="Cenas">
+                    <input id="listaGestosButton" type="button" value="Gestos">
+                    <input id="listaQuestionariosButton" type="button" value="Questionários">
+                    <input id="listaPerguntasButton" type="button" value="Perguntas">
+                </div>
+                <div id="todosDadosSessaoDiv">
+                    <div id="listaSessoesDiv" hidden>
+                        <input class="tabgraphButtons" id="listaSessoesTabelaButton" type="button" value="Tabela">
+                        <input class="tabgraphButtons" id="listaSessoesGraficoButton" type="button" value="Gráfico">
+                        <div id="semRegistosSessoesDiv" hidden><p>Não existem registos para esta criança.</p></div>
+                        <div id="sessoesGraphDiv" hidden>
+                            <div id="chart_div_static_sessoes">
+                                <div id="loading-Notification_static" class="chart_loading ui-widget ui-widget-content ui-state-error" style="display: none;">Loading...</div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type='button' id="labelSessaoTabelaSessao" value="Sessão" disabled hidden>
+                            <input id="sessoesCenaNext" type="button" value=">" hidden disabled>
+                            <input type='button' id="labelCenaTabelaSessao" value="Cena" hidden disabled>
+                            <input id="cenasGestosQuestionarioNext" type="button" value=">" hidden disabled>
+                            <input type='button' id="labelGestoTabelaSessao" value="Gesto" hidden disabled>
+                            <input type='button' id="labelQuestionarioTabelaSessao" value="Questionário" hidden disabled>
+                            <input id="questionariosPeguntasNext" type="button" value=">" hidden disabled>
+                            <input type='button' id="labelPerguntaTabelaSessao" value="Pergunta" hidden disabled>
+                        </div>
+                        <div id="sessoesTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="sessoesListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaSessoes" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data da Sessão</th>
+                                                    <th>Média da Pontuação</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sessoesDrillDownCenasTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="sessoesDrillDownCenasListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaSessoesDrillDownCenas" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Nome</th>
+                                                    <th>Exercício</th>
+                                                    <th>Pontuação</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sessoesDrillDownGestosTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="sessoesDrillDownGestosListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaSessoesDrillDownGestos" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Nome</th>
+                                                    <th>Resposta</th>
+                                                    <th>Pontuação</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sessoesDrillDownQuestionariosTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="sessoesDrillDownQuestionariosListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaSessoesDrillDownQuestionarios" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Nome</th>
+                                                    <th>Nº Perguntas</th>
+                                                    <th>Respostas Correctas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sessoesDrillDownPerguntasTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="sessoesDrillDownPerguntasListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaSessoesDrillDownPerguntas" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Questão</th>
+                                                    <th>Resposta</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="listaCenasDiv" hidden>
+                        <input class="tabgraphButtons" id="listaCenasTabelaButton" type="button" value="Tabela">
+                        <input class="tabgraphButtons" id="listaCenasGraficoButton" type="button" value="Gráfico">
+                        <div id="semRegistosCenasDiv" hidden><p>Não existem registos para esta criança.</p></div>
+                        <div id="cenasGraphDiv" hidden>
+                            <div id="chart_div_static_cenas">
+                                <div id="loading-Notification_static" class="chart_loading ui-widget ui-widget-content ui-state-error" style="display: none;">Loading...</div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type='button' id="labelCenaTabelaCena" value="Cena" hidden disabled>
+                            <input id="cenasGestosQuestionarioNextCena" type="button" value=">" hidden disabled>
+                            <input type='button' id="labelGestoTabelaCena" value="Gesto" hidden disabled>
+                            <input type='button' id="labelQuestionarioTabelaCena" value="Questionário" hidden disabled>
+                            <input id="questionariosPeguntasNextCena" type="button" value=">" hidden disabled>
+                            <input type='button' id="labelPerguntaTabelaCena" value="Pergunta" hidden disabled>
+                        </div>
+                        <div id="cenasTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="cenasListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaCenas" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Nome</th>
+                                                    <th>Exercício</th>
+                                                    <th>Pontuação</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="cenasDrillDownGestosTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="cenasDrillDownGestosListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaCenasDrillDownGestos" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Nome</th>
+                                                    <th>Resposta</th>
+                                                    <th>Pontuação</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="cenasDrillDownQuestionariosTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="cenasDrillDownQuestionariosListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaCenasDrillDownQuestionarios" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Nome</th>
+                                                    <th>Nº Perguntas</th>
+                                                    <th>Respostas Correctas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="cenasDrillDownPerguntasTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="cenasDrillDownPerguntasListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaCenasDrillDownPerguntas" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Questão</th>
+                                                    <th>Resposta</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="listaGestosDiv" hidden>
+                        <input class="tabgraphButtons" id="listaGestosTabelaButton" type="button" value="Tabela">
+                        <input class="tabgraphButtons" id="listaGestosGraficoButton" type="button" value="Gráfico">
+                        <div id="semRegistosGestosDiv" hidden><p>Não existem registos para esta criança.</p></div>
+                        <div id="gestosGraphDiv">
+                            <div id="chart_div_static_gestos">
+                                <div id="loading-Notification_static" class="chart_loading ui-widget ui-widget-content ui-state-error" style="display: none;">Loading...</div>
+                            </div>
+                        </div>
+                        <div id="gestosTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="gestosListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaGestos" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Nome</th>
+                                                    <th>Resposta</th>
+                                                    <th>Pontuação</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="listaQuestionariosDiv" hidden>
+                        <input class="tabgraphButtons" id="listaQuestionariosTabelaButton" type="button" value="Tabela">
+                        <input class="tabgraphButtons" id="listaQuestionariosGraficoButton" type="button" value="Gráfico">
+                        <div id="semRegistosQuestionariosDiv" hidden><p>Não existem registos para esta criança.</p></div>
+                        <div id="questionariosGraphDiv">
+                            <div id="chart_div_static_questionarios">
+                                <div id="loading-Notification_static" class="chart_loading ui-widget ui-widget-content ui-state-error" style="display: none;">Loading...</div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type='button' id="labelQuestionarioTabelaQuestionario" value="Questionário" hidden disabled>
+                            <input id="questionariosPeguntasNextQuestionario" type="button" value=">" hidden disabled>
+                            <input type='button' id="labelPerguntaTabelaQuestionario" value="Pergunta" hidden disabled>
+                        </div>
+                        <div id="questionariosTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="questionariosListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaQuestionarios" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Nome</th>
+                                                    <th>Nº Perguntas</th>
+                                                    <th>Respostas Correctas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="questionariosDrillDownPerguntasTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="questionariosDrillDownPerguntasListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaQuestionariosDrillDownPerguntas" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Questão</th>
+                                                    <th>Resposta</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="listaPerguntasDiv" hidden>
+                        <input class="tabgraphButtons" id="listaPerguntasTabelaButton" type="button" value="Tabela">
+                        <input class="tabgraphButtons" id="listaPerguntasGraficoButton" type="button" value="Gráfico">
+                        <div id="semRegistosPerguntasDiv" hidden><p>Não existem registos para esta criança.</p></div>
+                        <div id="perguntasGraphDiv">
+                            <div id="chart_div_static_perguntas">
+                                <div id="loading-Notification_static" class="chart_loading ui-widget ui-widget-content ui-state-error" style="display: none;">Loading...</div>
+                            </div>
+                        </div>
+                        <div id="perguntasTabelaDiv" hidden>
+                            <div id="dt_example">
+                                <div id="perguntasListaDiv">
+                                    <div id="demo">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="display" id="listaPerguntas" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Questão</th>
+                                                    <th>Resposta</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

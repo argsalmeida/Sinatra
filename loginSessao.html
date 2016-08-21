@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Sinatra - Benvindo! </title>
+	</head>
+    <!-- Importacao dos ficheiros necessarios -->
+    <!-- CSS -->
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/loginSessao.css" rel="stylesheet" type="text/css">
+        <!-- custom theme jquery -->
+    <link href="css/jQueryCustom/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+        <!-- custom font -->
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:700|Amatic+SC:700" rel="stylesheet" type="text/css" />
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jQuery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/jQuery/jquery-ui-1.10.4.custom.js"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/loginSessao.js"></script>
+    <script type="text/javascript" src="js/requests/ajaxRequest.js"></script>
+    <script type="text/javascript" src="js/requests/terapeutasRequests.js"></script>
+    <script type="text/javascript" src="js/requests/xml/terapeutasXML.js"></script>
+    <script type="text/javascript" src="js/requests/lastLoginRequests.js"></script>
+    <script type="text/javascript" src="js/requests/xml/lastLoginXML.js"></script>
+ 
+	<body>
+		<div class="main">
+			<div id="banner">
+				<img src="imagens/sinatraMain.png" height="125px" alt="logo"/>
+			</div>
+			<div id="contentLogin">
+				</br></br></br>
+				<!-- formulário para o login do terapeuta -->
+				<div id="login">
+					<div id="divLogin">
+						<form onsubmit="return false;">
+							<p><strong>Nome do terapeuta:</strong><font color="red">*</font></br>
+								<select id="loginSelectTerapeuta">
+									<option disabled selected>Seleccione o/a terapeuta</option>
+								</select>
+							</p>
+							<p><strong>Password:</strong><font color="red">*</font><br>
+								<input type="password" name="password" id="loginPassword" maxlength="255"/>
+							</p>
+							<div align="center">
+								<button id="loginButton" type="button">Login</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- dialogs -->
+				<div id="dialogNecessarioSeleccionarTerapeuta" title="Aviso!">Tem de seleccionar um terapeuta.</div>
+				<div id="dialogPasswordIncorrecta" title="Password Incorrecta!">Inseriu uma password incorrecta. Tente novamente!</div>
+				<div id="dialogNecessarioInserirPassword" title="Aviso!">Tem de seleccionar uma password.</div>
+				</br></br></br> 				
+			</div>
+		</div>
+<!-- <input type="button" id="tutorialButton" value="Ajuda"/>-->
+	</body>
+</html>
+
+
+				
+				
+				
+				

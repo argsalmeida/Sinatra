@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Sinatra - Benvindo! </title>
+	</head>
+		<!-- Importacao dos ficheiros necessarios -->
+		<!-- CSS -->
+		<link href="../css/main.css" rel="stylesheet" type="text/css">
+		<link href="../css/listas.css" rel="stylesheet" type="text/css">
+		<link href="../css/timePicker/jquery.timeselector.css" rel="stylesheet" type="text/css">
+			<!-- custom theme jquery -->
+		<link href="../css/jQueryCustom/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+			<!-- datatable -->
+		<link href="../css/dataTables/demo_page.css" rel="stylesheet" type="text/css">
+		<link href="../css/dataTables/demo_table.css" rel="stylesheet" type="text/css">
+			<!-- custom font -->
+		<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:700|Amatic+SC:700" rel="stylesheet" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+		<!-- JQuery -->
+		<script type="text/javascript" src="../js/jQuery/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="../js/jQuery/jquery-ui-1.10.4.custom.js"></script>
+			<!-- datatable -->
+		<script type="text/javascript" src="../js/dataTables/jquery.dataTables.js"></script>
+			<!-- timeEntry -->
+<!--		<script type="text/javascript" src="../js/timeEntry/jquery.timeentry.js"></script> -->
+			<!-- time picker -->
+    		<script src="../js/jQuery/timePicker/jquery.timeselector.js"></script> 
+		<!-- Scripts -->
+		<script type="text/javascript" src="../js/listas/listas.js"></script>
+		<script type="text/javascript" src="../js/listas/listaSessao.js"></script>
+		<script type="text/javascript" src="../js/sharedFunctions.js"></script>
+		<script type="text/javascript" src="../js/requests/sessaoRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/sessaoXML.js"></script>
+		<script type="text/javascript" src="../js/listas/listaHistorico.js"></script>
+		<script type="text/javascript" src="../js/requests/historicoRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/historicoXML.js"></script>
+		<script type="text/javascript" src="../js/listas/listaTerapeutas.js"></script>
+		<script type="text/javascript" src="../js/requests/terapeutasRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/terapeutasXML.js"></script>
+		<script type="text/javascript" src="../js/listas/listaCriancas.js"></script>
+		<script type="text/javascript" src="../js/requests/criancasRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/criancasXML.js"></script>
+		<script type="text/javascript" src="../js/requests/ajaxRequest.js"></script>
+        <script type="text/javascript" src="../js/requests/thumbnailRequests.js"></script>
+	<body>
+		<div class="main">
+			<div>
+				<div id="banner">
+					<img src="../imagens/sinatraMainSmall.png" height="50px" alt="logo"/>
+				</div>
+				<div id="logoutDiv">
+					<button id="logoutButton" type="button">Logout</button>
+				</div>
+			</div>
+			<div id="contentListas">
+				<div id="listaTabs">
+					<ul>
+						<li><a href="#tabsSessao">Sessões a realizar</a></li>
+						<li><a href="#tabsHistorico">Histórico de Sessões</a></li>
+						<li><a href="#tabsTerapeutas">Terapeutas</a></li>
+						<li><a href="#tabsCriancas">Crianças</a></li>
+					</ul>
+					<div id="tabsSessao">
+						<div id="overlaySessao"><button id="adicionarSessaoButton" type="button">Adicionar Sessão</button></div>
+						<div id="dt_example">
+							<div id="sessaoListaDiv">
+								<div id="demo">
+									<table cellpadding="0" cellspacing="0" border="0" class="display" id="listaSessao" width="100%">
+										<thead>
+											<tr>
+												<th>Terapeuta</th>
+												<th>Data / Hora</th>
+												<th>Criança(s)</th>
+												<th>Sessão</th>
+												<th>Exercício</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</br></br>
+						<!-- Formulário para duplicar a sessão -->
+						<div id="dialogDuplicarSessao" title="Duplicar sessão">
+							<!--<h3>Dados do terapeuta e da criança</h3>-->
+							<p><strong>Nome do terapeuta:</strong> &nbsp;
+								<input type="text" id="terapeutaDuplicarSessao" value="" readonly>
+							</p>
+							<div>
+								<strong id="criancaDuplicarSessaoText">Nome da(s) criança(s):</strong> &nbsp; 
+								<textarea type="text" id="criancaDuplicarSessao" value="" readonly></textarea>
+								
+							</div>
+<!--							<h3>Marcação da sessão de terapia</h3> -->
+							</br>
+							<div id="sessaoPresencialDiv" hidden>
+								<strong>Data:</strong> <input type="text" id="dataSessao"> &nbsp;
+								<strong>Hora:</strong> <input type="text" id="horaSessao">
+							</div>
+                            <div id="sessaoRemotaDiv" hidden>
+                                <strong>Data Início:</strong> <input type="text" id="dataInicio"> &nbsp;
+                                <strong>DataFim:</strong> <input type="text" id="dataFim">
+                            </div>
+							</br>
+							<div id="duplicarSessaoDiv">
+								<!--<strong>Nome da História:</strong>		
+								<input type="text" id="historiaDuplicarSessao" value="" readonly>-->
+							</div>
+
+						</div>
+						<!-- Formulário para remover a Sessão -->
+						<div id="dialogRemoverSessao" title="Remover Sessao?">Tem a certeza que desejar remover esta sessão?</div>
+					</div>
+					<div id="tabsHistorico">
+						<div id="dt_example">
+							<div id="historicoListaDiv">
+								<div id="demo">
+									<table cellpadding="0" cellspacing="0" border="0" class="display" id="listaHistorico" width="100%">
+										<thead>
+											<tr>
+												<th>Terapeuta</th>
+												<th>Data / Hora</th>
+												<th>Criança(s)</th>
+												<th>Sessão</th>
+												<th>Exercício</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- Formulário para duplicar a sessão do historico -->
+						<div id="dialogDuplicarHistorico" title="Duplicar sessão">
+							<!--<h3>Dados do terapeuta e da criança</h3>-->
+							<p><strong>Nome do terapeuta:</strong> &nbsp;
+								<input type="text" id="terapeutaDuplicarSessaoHistorico" value="" readonly>
+							</p>
+							<div>
+								<strong id="criancaDuplicarSessaoHistoricoText">Nome da(s) criança(s):</strong> &nbsp; 
+								<textarea type="text" id="criancaDuplicarSessaoHistorico" value="" readonly></textarea>
+								
+							</div>
+<!--							<h3>Marcação da sessão de terapia</h3> -->
+							</br>
+                            <div id="sessaoPresencialHistoricoDiv" hidden>
+                                <strong>Data:</strong> <input type="text" id="dataSessaoHistorico"> &nbsp;
+                                <strong>Hora:</strong> <input type="text" id="horaSessaoHistorico">
+                            </div>
+                            <div id="sessaoRemotaHistoricoDiv" hidden>
+                                <strong>Data Início:</strong> <input type="text" id="dataInicioHistorico"> &nbsp;
+                                <strong>DataFim:</strong> <input type="text" id="dataFimHistorico">
+                            </div>
+							</br>
+							<div id='duplicarHistoricoDiv'>
+								<!-- <strong>Nome da História:</strong>		
+								<input type="text" id="historiaDuplicarSessaoHistorico" value="" readonly> -->
+							</div>
+						</div>
+					</br></br>
+					</div>
+					<div id="tabsTerapeutas">
+						<div id="overlayTerapeutas"><button id="adicionarTerapeutasButton" type="button">Adicionar Terapeuta</button></div>
+						<div id="dt_example">
+							<div id="terapeutasListaDiv">
+								<div id="demo">
+									<table cellpadding="0" cellspacing="0" border="0" class="display" id="listaTerapeutas" width="100%">
+										<thead>
+											<tr>
+												<th>Nome dos Terapeutas</th>
+                                                <th>Foto</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						</br></br>
+						<!-- Formulario de popup do terapeuta -->
+						<div id="dialogAdicionarTerapeuta" title="Adicionar Terapeuta"><p>Indique os dados do terapeuta.</p>
+                            <p style="margin-bottom: 0%"><strong>Foto:</strong><font color="red">*</font><br></p>
+                            <div id="alterarFotoTerapeutaDiv">
+                                <img id="fotoTerapeuta" src="../imagens/noImage.gif" width="60" height="60"/>
+                                <form id="newFotoTerapeuta" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="path" id="novaFotoTerapeuta" style="display:none;" accept="image/gif, image/jpeg, image/jpg, image/png, image/bmp"/>
+                                </form>
+                                </br>
+                                <input type="button" id="alterarFotoTerapeutaButton" value="Alterar"/>
+                            </div>
+                            <p><strong>Nome</strong><font color="red">*</font><br>
+                            <input type="text" name="name" id="nomeTerapeuta" maxlength="255"/></p>
+                            <p><strong>Password</strong><font color="red">*</font><br>
+                            <input type="password" name="password" id="passwordTerapeuta" maxlength="255"/></p> 
+						</div>
+	
+						<!-- Formulario para modificar o terapeuta -->
+						<div id="dialogModificarTerapeuta" title="Modificar Terapeuta"><p>Modifique os dados do terapeuta.</p>
+                                <div id="alterarFotoTerapeutaDiv">
+                                    <img id="fotoTerapeutaModificado" src="../imagens/noImage.gif" width="60" height="60"/>
+                                    <form id="newFotoTerapeutaModificado" method="post" enctype="multipart/form-data">
+                                        <input type="file" name="path" id="novaFotoTerapeutaModificado" style="display:none;" accept="image/gif, image/jpeg, image/jpg, image/png, image/bmp"/>
+                                    </form>
+                                    </br>
+                                    <input type="button" id="alterarFotoTerapeutaModificadoButton" value="Alterar"/>
+                                </div>
+								<p><strong>Nome</strong><font color="red">*</font><br>
+								<input type="text" name="name" id="nomeTerapeutaModificado" maxlength="255"/></p>
+								<p><strong>Password</strong><font color="red">*</font><br>
+								<input type="password" name="password" id="passwordTerapeutaModificado" maxlength="255"/></p> 
+						</div> 
+	
+						<div id="dialogRemoverTerapeuta" title="Remover Terapeuta?">Tem a certeza que desejar remover este terapeuta?</div>
+						<div id="dialogTerapeutaMesmoNome" title="Atenção">Já existe um terapeuta com este nome, mas foi desactivado. É você?</div>
+					</div>
+					<div id="tabsCriancas">
+						<div id="overlayCriancas"><button id="adicionarCriancaButton" type="button">Adicionar Criança</button></div>
+						<div id="dt_example">
+							<div id="criancasListaDiv">
+								<div id="demo">
+									<table cellpadding="0" cellspacing="0" border="0" class="display" id="listaCriancas" width="100%">
+										<thead>
+											<tr>
+                                                <th>Nome</th>
+                                                <th>Foto</th>
+                                                <th>Username</th>
+												<th>Data de Nascimento</th>
+												<th>Observações</th>
+												<th>Password</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						</br></br>
+						<!-- Formulario de popup da crianca -->
+ 						<div id="dialogAdicionarCrianca" title="Adicionar Criança"><p>Indique os dados da criança.</p>
+                                <p style="margin-bottom: 0%"><strong>Foto:</strong><font color="red">*</font><br></p>
+                                <div id="alterarFotoCriancaDiv">
+                                    <img id="fotoCrianca" src="../imagens/noImage.gif" width="60" height="60"/>
+                                    <form id="newFotoCrianca" method="post" enctype="multipart/form-data">
+                                        <input type="file" name="path" id="novaFotoCrianca" style="display:none;" accept="image/gif, image/jpeg, image/jpg, image/png, image/bmp"/>
+                                    </form>
+                                    </br>
+                                    <input type="button" id="alterarFotoCriancaButton" value="Alterar"/>
+                                </div>
+                                <p><strong>Username</strong><font color="red">*</font><br>
+                                <input type="text" name="username" id="usernameCrianca" maxlength="255"/></p>
+								<p><strong>Nome</strong><font color="red">*</font><br>
+								<input type="text" name="name" id="nomeCrianca" maxlength="255"/></p>
+								<p><strong>Data de Nascimento:</strong><font color="red">*</font><br> 
+								<input type="text" name="name" id="dataNascimentoCrianca"/></p>
+								<p><strong>Observação:</strong><br> 
+									<textarea type="text" id="observacaoCrianca" maxlength="255"></textarea></p>
+								<p><strong>Password</strong><font color="red">*</font><br>
+								<input type="password" name="password" id="passwordCrianca" maxlength="255"/></p> 
+						</div>
+	
+						<!-- Formulario para modificar a crianca -->
+ 						<div id="dialogModificarCrianca" title="Modificar Criança"><p>Modifique os dados da criança.</p>
+                            <p style="margin-bottom: 0%"><strong>Foto:</strong><font color="red">*</font><br></p>
+                            <div id="alterarFotoCriancaDiv">
+                                <img id="fotoCriancaModificada" src="../imagens/noImage.gif" width="60" height="60"/>
+                                <form id="newFotoCriancaModificada" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="path" id="novaFotoCriancaModificada" style="display:none;" accept="image/gif, image/jpeg, image/jpg, image/png, image/bmp"/>
+                                </form>
+                                </br>
+                                <input type="button" id="alterarFotoCriancaModificadaButton" value="Alterar"/>
+                            </div>
+                            <p><strong>Username</strong><font color="red">*</font><br>
+                            <input type="text" name="username" id="usernameCriancaModificada" maxlength="255"/></p>
+                            <p><strong>Nome:</strong><font color="red">*</font><br>
+                            <input type="text" name="name" id="nomeCriancaModificada" maxlength="255"/></p> 
+                            <p><strong>Data de Nascimento:</strong><font color="red">*</font><br> 
+                            <input type="text" name="name" id="dataNascimentoCriancaModificada"/></p>
+                            <p><strong>Observação:</strong><br> 
+                            <textarea type="text" id="observacaoCriancaModificada" maxlength="255"></textarea></p>
+                            <p><strong>Password:</strong><font color="red">*</font><br> 
+                            <input type="text" id="passwordCriancaModificada" maxlength="255"></p>    
+						</div> 
+	
+						<div id="dialogRemoverCrianca" title="Remover Criança?">Tem a certeza que desejar remover esta criança?</div>
+						<div id="dialogCriancaMesmoNome" title="Atenção">Já existe uma criança com este nome, mas foi desactivado. Deseja substituir a criança?</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

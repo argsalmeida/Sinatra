@@ -1,0 +1,1164 @@
+/************************** Tabs **************************/
+html {
+	height: 100%;
+	overflow: auto;
+	/*min-width: 590px;*/
+
+}
+
+#dadosSessao{
+	/*width:96.3%;*/
+	height: 80vh;
+	/*font-family:Verdana, Geneva, sans-serif;*/
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 15px;
+	margin-left: 1.6%;
+	margin-right: 0%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	background-color: #CCE0FF;
+}
+
+#dadosSessao .ui-tabs-panel {
+	/*height: 100%;*/
+	overflow: hidden;
+	background: #CCE0FF;
+	padding-top: 6px !important;
+	padding-bottom: 6px !important;
+	overflow: auto;
+/*	height: 71.7vh; */
+}
+
+/* para centrar o div que contem o widget das tabs */
+#stTabswrapper{
+	margin-left: 2%;
+	width: 95% !important;
+	/*height: 100%;*/
+	z-index: 1000;
+}
+
+.ui-widget-content{
+	border: 1px solid #aed0ea !important;
+	background: #CCE0FF none !important;
+}
+
+#dadosSessao .ui-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: .2em .2em 0;
+	background: #CCE0FF;
+}
+/*
+#dadosSessao .ui-tabs-panel {
+	padding-top: 6px !important;
+	padding-bottom: 6px !important;
+	overflow: auto;
+}*/
+
+#tabUl{
+	background: #CCE0FF;
+}
+
+#tabUl a{
+	padding-bottom: 6px;
+	padding-top: 6px;
+	padding-right: 12px;
+	padding-left: 12px;
+}
+/* divs com os botões anterior seguinte*/
+.anteriorSeguinteButtonsDiv{
+	text-align: center;
+	width: 100%;
+	font-size: small;
+}
+
+.contentTabs{
+	/*width: 100%;*/
+	text-align: center;
+	margin-top: 0.5%;
+}
+/*************************** 0 - Escolher Terapeuta ***************************/
+/* botoes anterior e seguinte */
+#cancelarTerapeutaButton, 
+#seguinteTerapeutaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* lista de terapeutas */
+#listaTerapeutasSessao{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/*****************************************************************************/
+/*************************** 1 - Escolher Crianças ***************************/
+/* botoes anterior e seguinte */
+#anteriorCriancaButton, 
+#seguinteCriancaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* botoes referentes a manipulacao das listas */
+#seleccionarTudoListaCriancasExistentesButton, 
+#removerTudoListaCriancasExistentesButton, 
+#adicionarCriancaListaSessaoButton, 
+#removerCriancaListaSessaoButton,
+#seleccionarTudoListaCriancasSessaoButton,
+#removerTudoListaCriancaSessaoButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+}
+/* listas */
+#listaCriancasExistentes{
+	width: 275px;
+	height: 200px;
+	background-color: white;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#input_escolheCriancas{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#listaCriancasSessao{
+	width: 275px;
+	height: 230px;
+	background-color: white;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/*****************************************************************************/
+/*************************** 2 - Escolher Tipo Sessao ***************************/
+/* botoes anterior e seguinte */
+#anteriorTipoSessaoButton,
+#seguinteTipoSessaoButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#sessaoPresencialButton, 
+#sessaoRemotaButton{ 
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/********************************************************************************/
+/*************************** 3 - Escolher Data/Hora ***************************/
+/* botoes anterior e seguinte */
+#anteriorDataHoraButton,
+#seguinteDataHoraButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/* caixas de texto da data e da hora */
+#dataSessao{
+	font-family: 'Josefin Sans', sans-serif;
+	width: 10%;
+	min-width: 116px;
+	text-align: center;
+}
+
+#horaSessao{
+	font-family: 'Josefin Sans', sans-serif;
+	width: 6%;
+	min-width: 70px;
+	text-align: center;
+}
+/******************************************************************************/
+/*************************** 4 - Escolher Intervalo Datas ***************************/
+/* botoes anterior e seguinte */
+#anteriorIntervaloDatasButton,
+#seguinteIntervaloDatasButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/* caixas de texto das datas */
+#dataInicioSessao,
+#dataFimSessao{
+	font-family: 'Josefin Sans', sans-serif;
+	width: 10%;
+	min-width: 116px;
+	text-align: center;
+}
+/************************************************************************************/
+/*************************** 5 - Tipo de Exercício ***************************/
+/* botoes anterior e seguinte */
+#anteriorTipoExercicioButton,
+#seguinteTipoExercicioButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* caixas de texto da data e da hora */
+#exercicioHistoriaButton,
+#exercicioCoDrawButton,
+#exercicioGateauButton,
+#terminarTipoExercicioButton{
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/************************************************************************************/
+/*************************** 6 - Gateau ***************************/
+/* botoes anterior e seguinte */
+#anteriorExercicioGateauButton,
+#seguinteExercicioGateauButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* caixas de texto da data e da hora */
+#terminarExercicioGateauButton{
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/******************************************************************/
+
+/*************************** 7 - Escolher História ***************************/
+/* botoes anterior e seguinte */
+#anteriorHistoriaButton,
+#seguinteHistoriaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#novaHistoriaButton, 
+#historiaBibliotecaButton{ 
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/*****************************************************************************/
+/*************************** 8 - Nome da História ***************************/
+/* botoes anterior e seguinte */
+#anteriorNomeHistoriaButton,
+#seguinteNomeHistoriaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#nomeHistoria{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/****************************************************************************/
+/*************************** 9 - Descrição da História ***************************/
+/* botoes anterior e seguinte */
+#anteriorDescricaoHistoriaButton,
+#seguinteDescricaoHistoriaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#descricaoHistoria{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/*********************************************************************************/
+/*************************** 10 - Thumbnail da História ***************************/
+/* botoes anterior e seguinte */
+#anteriorThumbnailHistoriaButton,
+#seguinteThumbnailHistoriaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#alterarThumbnailButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/*********************************************************************************/
+/*************************** 11 - Etiquetas da História ***************************/
+/* botoes anterior e seguinte */
+#anteriorEtiquetasHistoriaButton,
+#seguinteEtiquetasHistoriaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* caixa de texto para pesquisar/adicionar etiquetas */
+#input_escolheEtiquetasHistoria{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* botão que adiciona uma etiqueta */
+#adicionarEtiquetasHistoriaButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+	margin-bottom: 45%;
+	margin-top: 35%;
+}
+
+/* lista de etiquetas existentes */
+#listaEtiquetasHistoriasExistentes{
+	width: 275px;
+	height: 200px;
+	background-color: white;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* botoes referentes à lista de etiquetas existentes */
+#seleccionarTudolistaEtiquetasExistentesHistoriaButton,
+#removerTudolistaEtiquetasExistentesHistoriaButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+}
+
+/* botoes para adicionar ou remover etiquetas da história */
+#adicionarEtiquetaListaHistoriaButton,
+#removerEtiquetaListaHistoriaButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+	width: 132px;
+}
+
+/* lista de etiquetas seleccionadas */
+#listaEtiquetasHistoria{
+	width: 275px;
+	height: 230px;
+	background-color: white;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#seleccionarTudoListaEtiquetasHistoriaButton,
+#removerTudoListaEtiquetasHistoriaButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+}
+/*********************************************************************************/
+/*************************** 12 - Bibliotecas de História ***************************/
+/* botoes anterior e seguinte */
+#anteriorBibliotecaHistoriasButton,
+#seguinteBibliotecaHistoriasButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* coluna com as historias existentes */
+#bibliotecaHistoriasColuna{
+	/*padding: 1%;*/
+	float: left;
+	width: 64%;
+	border-right: solid 1px #CCC;
+	/*height: 440px;*/
+	height: 100%;
+}
+
+#bibliotecaHistoriaTitle{
+	width: auto;
+}
+
+/* lista de historias */
+#bibliotecaHistoriasDiv{
+	width: 99%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	/*height: auto;*/
+	/*height: 390px;*/
+	/*height: 90%;*/
+	border: 1px solid #aed0ea;
+}
+
+/* coluna com os detalhes da historia seleccionada */
+#historiaSeleccionadaColuna{
+	float: left;
+	padding-left: 1%;
+	width: 34%;
+	/*height: 520px;*/
+}
+
+#historiaSeleccionadaDiv{
+	width: auto;
+}
+
+/* div com a imagem da historia seleccionada*/
+#informacaoHistoria {
+	width:100%;
+	float:center;
+/*	height: auto;
+	height: 360px;*/
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* detalhes da historia seleccionada */
+#dadosSessaoBibliotecaButtons{
+	margin-top: 0.5%;
+	float: right;
+	font-size: small;
+}
+
+/* mensagem quando nenhuma história foi seleccionada*/
+#listaHistoriaP{
+	padding-left:1%;
+}
+
+.frameHistoria{
+	width: auto;
+	float:left; 
+	margin:5px;
+	text-align: center;
+}
+
+.thumbnailHistoria{
+	border: solid 3px #0191d8;
+	height:50px; 
+	width:71px;
+}
+
+.nomeHistoriaBiblioteca{
+	margin-top: 0px;
+	width:71px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#alterarBibliotecaHistoriasButton,
+#usarBibliotecaHistoriasButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+}
+
+/* Coluna História Seleccionada */
+/* imagem */
+#thumbnailHistoriaSeleccionada{
+	display: table;
+   	margin: 0 auto;
+	padding:2%;
+}
+
+#thumbnailImagem{
+	width:200px;
+	height:150px;
+	border: solid 3px #0191d8;
+}
+
+/* detalhes */
+#historiaSeleccionadaDetalhes{
+	margin-top: 2%;
+	width:auto;
+	white-space: pre-wrap;      /* CSS3 */   
+	white-space: -moz-pre-wrap; /* Firefox */    
+	white-space: -pre-wrap;     /* Opera <7 */   
+	white-space: -o-pre-wrap;   /* Opera 7 */    
+	word-wrap: break-word;      /* IE */
+	text-align: left;
+}
+/* lista de cenas na história seleccionada */
+#listaCenasHistoriaDiv{
+	width: 98%;
+	overflow-x: auto;
+	overflow-y: hidden; 
+	height: 110px;
+	white-space: nowrap;
+	border: 1px solid #aed0ea;
+}
+
+/* começa a 2px para dar certo nas contas que se faz no JQuery */
+#listaCenasHistoria{
+	width: 2px;
+}
+
+.frameCenasHistoria{
+	width: auto;
+	float:left; 
+	margin:5px;
+	text-align: center;
+}
+
+.thumbnailCenasHistoria {
+	border: solid 3px #0191d8;
+	width:80px;
+	height: 57px;
+}
+
+.nomeHistoriaBiblioteca{
+	margin-top: 0px;
+	word-wrap: break-word;
+}
+/***********************************************************************************/
+/*************************** 13 - Escolher Cena ***************************/
+/* botoes anterior e seguinte */
+#anteriorCenaButton,
+#seguinteCenaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* coluna com os botões com as opções */
+#escolherCenaColuna{
+	/*padding: 1%;*/
+	float: left;
+	width: 64%;
+/*	min-width:358px;*/
+	border-right: solid 1px #CCC;
+}
+
+#novaCenaButton,
+#cenaBibliotecaButton, 
+#terminarBibliotecaCenasButton{ 
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/* colunas com as cenas existentes na historia */
+#cenasHistoriaColuna{
+	float: left;
+	padding-left: 1%; 
+	width: 34%;
+/*	min-width:199px; */
+}
+
+#cenaHistoriaTitleDiv{
+	width:auto;
+}
+
+#cenaHistoriaTitle{
+	margin-bottom:0px;;
+}
+
+#cenasEscolhidasMensagem{
+	font-size:12px; 
+	margin-top:0px;
+}
+
+#cenasHistoriasDiv{
+	width: 99%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border: 1px solid #aed0ea;
+}
+/* mensagem quando nenhuma cena existe na história */
+#cenasHistoriaP{
+	padding-left:1%;
+}
+
+.frameCenasHistoriaSeleccionada{
+	width: auto;
+	float:left; 
+	margin:5px;
+	text-align: center;
+}
+
+.thumbnailCenasHistoriaSeleccionada{
+	border: solid 3px #0191d8;
+	height:50px; 
+	width:71px;
+}
+
+.nomeCenasBibliotecaSeleccionada{
+	margin-top: 0px;
+	width: 71px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/************************************************************************/
+/*************************** 14- Nome da Cena ***************************/
+/* botoes anterior e seguinte */
+#anteriorNomeCenaButton,
+#seguinteNomeCenaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#nomeCena{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/*************************************************************************/
+/*************************** 15 - Nome da Cena ***************************/
+/* botoes anterior e seguinte */
+#anteriorDescricaoCenaButton,
+#seguinteDescricaoCenaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#descricaoCena{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/*************************************************************************/
+/*************************** 16 - Etiquetas da Cena ***************************/
+/* botoes anterior e seguinte */
+#anteriorEtiquetasCenaButton,
+#seguinteEtiquetasCenaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* caixa de texto para pesquisar/adicionar etiquetas */
+#input_escolheEtiquetasCena{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* lista de etiquetas existentes */
+#listaEtiquetasCenasExistentes{
+	width: 275px;
+	height: 200px;
+	background-color: white;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* botoes referentes à lista de etiquetas existentes */
+#seleccionarTudolistaEtiquetasExistentesCenaButton,
+#removerTudolistaEtiquetasExistentesCenaButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+}
+
+/* botão que adiciona uma etiqueta */
+#adicionarEtiquetasCenaButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+	margin-bottom: 45%;
+	margin-top: 35%;
+}
+
+/* botoes para adicionar ou remover etiquetas da cena */
+#adicionarEtiquetaListaCenaButton,
+#removerEtiquetaListaCenaButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+	width: 132px;
+}
+
+/* lista de etiquetas seleccionadas */
+#listaEtiquetasCena{
+	width: 275px;
+	height: 230px;
+	background-color: white;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* botoes referentes à lista de etiquetas existentes */
+#seleccionarTudoListaEtiquetasCenaButton,
+#removerTudoListaEtiquetasCenaButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+}
+
+/******************************************************************************/
+/*************************** 17 - Introdução à Actividade ***************************/
+/* botoes anterior e seguinte */
+#anteriorIntroducaoCenaButton,
+#seguinteIntroducaoCenaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.thumbnailCena{
+	border: solid 3px #0191d8;
+	height:70px; 
+	width:100px;
+}
+
+#adicionarIntroducaoButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+}
+/************************************************************************************/
+/*************************** 18 - Biblioteca Cenas ***************************/
+/* botoes anterior e seguinte */
+#anteriorBibliotecaCenasButton,
+#seguinteBibliotecaCenasButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* coluna com as cenas existentes */
+#bibliotecaCenasColuna{
+	float: left;
+	width: 64%;
+	border-right: solid 1px #CCC;
+	/*height: 570px;*/
+	height: 100%;
+}
+
+#bibliotecaCenasTitle{
+	width: auto;
+}
+
+/* lista de cenas */
+#bibliotecaCenasDiv{
+	width: 99%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	/*height: 500px;*/
+	border: 1px solid #aed0ea;
+}
+
+/* coluna com os detalhes da cena seleccionada */
+#cenaSeleccionadaColuna{
+	float: left;
+	padding-left: 1%; 
+	width: 34%;
+	/*height: 520px;*/
+}
+
+#cenaSeleccionadaDiv{
+	width:auto;
+}
+
+.thumbnailCenaBiblioteca{
+	border: solid 3px #0191d8;
+	height:50px; 
+	width:71px;
+}
+
+/* div com os detalhes da cena seleccionada */
+#informacaoCena{
+	width:100%;
+	float:center;
+	overflow-y: auto;
+	overflow-x: hidden;
+	/*height: 200px;*/
+}
+
+#cenaSeleccionadaDetalhes{
+	margin-top: 2%;
+	width:auto;
+	text-align: left;
+	height: 315px;
+	white-space: pre-wrap;      /* CSS3 */   
+	white-space: -moz-pre-wrap; /* Firefox */    
+	white-space: -pre-wrap;     /* Opera <7 */   
+	white-space: -o-pre-wrap;   /* Opera 7 */    
+	word-wrap: break-word;      /* IE */
+}
+
+#componentesActividadeSeleccionada{
+	margin-bottom: 0px;
+}
+
+/* botoes para a cena seleccionada */
+#dadosSessaoBibliotecaCenaButtons{
+	margin-top: 0.5%;
+	float: right;
+	font-size: small;
+}
+
+#cenasHistoriaP{
+	padding-left:3em;
+}
+
+.frameCena {
+	width: auto;
+	float:left; 
+	margin:5px;
+	text-align: center;
+}
+
+.nomeCenaBiblioteca {
+	margin-top: 0px;
+	word-wrap: break-word;
+}
+
+#thumbnailCenaSeleccionada{
+	display: table;
+   	margin: 0 auto;
+	padding:2%;
+}
+
+#thumbnailImagemCena{
+	width:200px;
+	height:150px;
+	border: solid 3px #0191d8;
+}
+
+#detalhesActividadeCenaSeleccionadaBibliotecaCenas{
+	font-size:small;
+}
+
+#alterarBibliotecaCenasButton,
+#usarBibliotecaCenasButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: small;
+}
+/************************************************************************************/
+/*************************** 19 - Escolher Actividade ***************************/
+/* botoes anterior e seguinte */
+#anteriorActividadeButton,
+#seguinteActividadeButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#gestoButton,
+#questionarioButton{ 
+	width: 107px;
+	margin-left: 0.5%;
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/********************************************************************************/
+/*************************** 20 - Escolher Gesto ***************************/
+/* botoes anterior e seguinte */
+#anteriorGestoButton,
+#seguinteGestoButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* coluna com os gestos existentes */
+#dadosSessaoGestoDiv{
+	display: inline-block;
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+/* select com os gestos */
+#escolherGestoDiv{
+	float: left;
+	width: 70%;
+	margin-left: 8%;
+}
+
+#input_escolheGesto{
+	margin-top: 1%;
+	width: 100%;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#listaGestosExistentes{
+	width: 100%;
+	margin-right: 1%;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#botoesGesto{
+	padding-top: 0.2%;
+	float: left;
+	width: 19%;
+	text-align: left;
+	padding-left: 1%;
+}
+
+#novoGestoButton, 
+#escolherGestoButton{
+	width: 81px;
+	font-size: small;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#gestosEscolhidosTitle{
+	margin-bottom:8px;
+	margin-top: 0px;
+}
+
+#gestosEscolhidosMensagem{
+	font-size:12px; 
+	margin-top:0px;
+}
+
+#listaGestosEscolhidos{
+	float: left;
+	padding-left: 1%;
+	width: 48%;
+	/*height: 500px;*/
+	border-left: solid 1px #CCC;
+}
+
+#gestosEscolhidosDiv{
+	width: 99%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	/*height: 400px;*/
+	border: 1px solid #aed0ea;
+}
+
+#gestosSorteable{
+	-webkit-padding-start: 1% !important;
+	-moz-padding-start: 1% !important;
+}
+
+.liGestos{
+	width: 98%;
+	list-style-type: none;
+	display: inline-block;
+	word-wrap: break-word;
+	text-align: left;
+}
+
+#liGestostexto{
+	float: left;
+	width: 84%;
+	padding-top: 2%;
+	padding-left: 1%;
+}
+
+#liGestosButton{
+	float:right;
+}
+/***************************************************************************/
+/*************************** 21 - Nome do Gesto ***************************/
+/* botoes anterior e seguinte */
+#anteriorNomeGestoButton,
+#seguinteNomeGestoButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#nomeGesto{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/**************************************************************************/
+/*************************** 22 - Números de Gestos ***************************/
+/* botoes anterior e seguinte */
+#anteriorNrVezesGestoButton,
+#seguinteNrVezesGestoButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#nrVezesGesto{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/******************************************************************************/
+/*************************** 23 - Escolher Questionario ***************************/
+/* botoes anterior e seguinte */
+#anteriorQuestionarioButton,
+#seguinteQuestionarioButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#dadosSessaoQuestionarioDiv{
+	display:inline-block;
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+#escolherQuestionarioDiv{
+	float: left;
+	width: 68%;
+	margin-left: 8%;
+}
+
+#input_escolheQuestionario{
+	margin-top: 1%;
+	width: 100%;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#listaQuestionariosExistentes{
+	width: 100%;
+	margin-right: 1%;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#botoesQuestionario{
+	padding-top: 0.2%;
+	float: left;
+	width: 19%;
+	text-align: left;
+	padding-left: 1%;
+}
+
+#novoQuestionarioButton, 
+#escolherQuestionarioButton{
+	width: 119px;
+	font-size: small;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#questionariosEscolhidosTitle{
+	margin-bottom:8px;
+	margin-top: 0px;
+}
+
+#questionariosEscolhidosMensagem{
+	font-size:12px; 
+	margin-top:0px;
+}
+
+#listaQuestionariosEscolhidos{
+	float: left;
+	padding-left: 1%;
+	width: 48%;
+	/*height: 500px;*/
+	border-left: solid 1px #CCC;
+}
+
+#questionariosEscolhidosDiv{
+	width: 99%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	/*height: 400px;*/
+	border: 1px solid #aed0ea;
+}
+
+#questionariosSorteable{
+	-webkit-padding-start: 1% !important;
+	-moz-padding-start: 1% !important;
+}
+
+.liQuestionarios{
+	width: 98%;
+	list-style-type: none;
+	display: inline-block;
+	word-wrap: break-word;
+	text-align:left;
+}
+
+#liQuestionariostexto{
+	float: left;
+	width: 84%;
+	padding-top: 2%;
+	padding-left: 1%;
+}
+
+#liQuestionariosButton{
+	float:right;
+}
+
+/**********************************************************************************/
+/*************************** 24 - Nome do Questionario ***************************/
+/* botoes anterior e seguinte */
+#anteriorNomeQuestionarioButton,
+#seguinteNomeQuestionarioButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#nomeQuestionario{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/*********************************************************************************/
+/*************************** 25 - Perguntas do Questionario ***************************/
+/* botoes anterior e seguinte */
+#anteriorPerguntasQuestionarioButton,
+#seguintePerguntasQuestionarioButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#dadosSessaoPerguntasQuestionarioDiv{
+	display:inline-block;
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+#escolherPerguntaQuestionarioDiv{
+	float: left;
+	width: 68%;
+	margin-left: 8%;
+}
+
+#input_escolhePerguntasQuestionario{
+	margin-top: 1%;
+	width: 100%;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#listaPerguntasExistentesQuestionario{
+	width: 100%;
+	margin-right: 1%;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#botoesPerguntas{
+	padding-top: 0.2%;
+	float: left;
+	width: 19%;
+	text-align: left;
+	padding-left: 1%;
+}
+
+#novaPerguntaQuestionarioButton, 
+#escolherPerguntaQuestionarioButton{
+	width: 98px;
+	font-size: small;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#listaPerguntasEscolhidasQuestionario{
+	float: left;
+	padding-left: 1%;
+	width: 48%;
+	/*height: 500px;*/
+	border-left: solid 1px #CCC;
+}
+
+#perguntasEscolhidasTitle{
+	margin-bottom:8px;
+	margin-top: 0px;
+}
+
+#perguntasEscolhidasMensagem{
+	font-size:12px; 
+	margin-top:0px;
+}
+
+#perguntasEscolhidasQuestionarioDiv{
+	width: 99%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	/*height: 400px;*/
+	border: 1px solid #aed0ea;
+}
+
+#perguntasSorteable{
+	-webkit-padding-start: 1% !important;
+	-moz-padding-start: 1% !important;
+}
+
+.liPerguntas{
+	width: 98%;
+	list-style-type: none;
+	display: inline-block;
+	word-wrap: break-word;
+	text-align: left;
+}
+
+#liPerguntastexto{
+	float: left;
+	width: 91%;
+	padding-top: 2%;
+	padding-left: 1%;
+}
+
+#liPerguntasButton{
+	float:right;
+}
+/**************************************************************************************/
+/*************************** 26 - Reforço Positivo ***************************/
+/* botoes anterior e seguinte */
+#anteriorReforcoPositivoButton,
+#seguinteReforcoPositivoButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#adicionarReforcoPositivoButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+}
+/*****************************************************************************/
+/*************************** 27 - Reforço Negativo ***************************/
+/* botoes anterior e seguinte */
+#anteriorReforcoNegativoButton,
+#seguinteReforcoNegativoButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#adicionarReforcoNegativoButton,
+#removerReforcoNegativoButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+}
+/*****************************************************************************/
+/*************************** 28 - Repetição da Cena ***************************/
+/* botoes anterior e seguinte */
+#anteriorRepeticaoCenaButton,
+#seguinteRepeticaoCenaButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#nrVezesCena{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/******************************************************************************/
+/*************************** 29 - Pontuação ***************************/
+/* botoes anterior e seguinte */
+#anteriorPontuacaoButton,
+#seguintePontuacaoButton{
+	font-family: 'Josefin Sans', sans-serif;
+}
+/**********************************************************************/

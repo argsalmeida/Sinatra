@@ -1,0 +1,152 @@
+
+#listaTabs{
+	width:96%;
+	height: 100%;
+	/*font-family:Verdana, Geneva, sans-serif;*/
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 15px;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	background-color: #CCE0FF;
+}
+
+#listaTabs .ui-tabs-panel {
+    height: auto;
+    overflow: none;
+    padding: 0 0 !important;
+}
+
+#listaTabs a{
+	padding-bottom: 6px;
+	padding-top: 6px;
+	padding-right: 12px;
+	padding-left: 12px;
+}
+
+/* estilo para o div do conteudo */
+#contentListas {
+	float: left; 
+	width: 100%;
+	height: 100%;
+	border: solid #0191d8 3px;
+	background: #CCE0FF;
+	padding: auto;
+	margin-bottom: 4%;
+    min-width: 777px;
+}
+
+
+#botoes{
+	display:inline-block;
+	white-space:nowrap;
+}
+
+#tabsSessao, #tabsTerapeutas, #tabsCriancas{
+	position:relative;
+	
+}
+
+#overlayTerapeutas{
+  position: absolute;
+ /* top: 7.9%;*/
+  left: 40%;
+  width: auto;
+  height: auto;
+  z-index: 10;
+}
+
+#adicionarTerapeutasButton{
+	font-size: medium;
+	font-family: 'Josefin Sans', sans-serif !important;
+}
+
+#alterarFotoTerapeutaDiv{
+    text-align: center;
+}
+
+
+#alterarFotoTerapeutaButton, #alterarFotoTerapeutaModificadoButton{
+    font-size: small;
+    font-family: 'Josefin Sans', sans-serif !important;
+    width: 30%;
+}
+
+#overlayCriancas{
+  position: absolute;
+  /*top: 7.9%;*/
+  left: 40%;
+  width: auto;
+  height: auto;
+  z-index: 10;
+}
+
+#adicionarCriancaButton{
+	font-size: medium;
+	font-family: 'Josefin Sans', sans-serif !important;
+}
+
+#alterarFotoCriancaDiv{
+    text-align: center;
+}
+
+
+#alterarFotoCriancaButton, #alterarFotoCriancaModificadaButton{
+    font-size: small;
+    font-family: 'Josefin Sans', sans-serif !important;
+    width: 30%;
+}
+
+#overlaySessao{
+  position: absolute;
+ /* top: 6.9%;*/
+  left: 41%;
+  width: auto;
+  height: auto;
+  z-index: 10;
+}
+
+#adicionarSessaoButton{
+	font-size: medium;
+	font-family: 'Josefin Sans', sans-serif !important;
+}
+
+#criancaDuplicarSessaoText, #etiquetasHistoriaDuplicarSessaoText, #criancaDuplicarSessaoHistoricoText, #etiquetasHistoriaDuplicarSessaoHistoricoText{
+	vertical-align: top;
+}
+
+#terapeutaDuplicarSessao,  #tipoExercicioDuplicarSessao, #exercicioDuplicarSessao, #terapeutaDuplicarSessaoHistorico, #historiaDuplicarSessaoHistorico{
+	background: transparent;
+	border: none;
+	/*width: 70%;*/
+	width: auto;
+}
+
+#criancaDuplicarSessao, #criancaDuplicarSessaoHistorico{
+	background: transparent;
+	border: none;
+	resize: none;
+	overflow: hidden;
+	/*width: 65%;*/
+	width: auto;
+}
+
+/*tamanho das caixa de texto da Marcação da sessão de terapia */
+#dataSessao, #dataSessaoHistorico, #dataInicio, #dataFim, #dataInicioHistorico, #dataFimHistorico{
+	width: 20%;
+	min-width:87px;
+}
+
+#horaSessao, #horaSessaoHistorico{
+	width: 11%;
+	min-width:46px;
+}
+
+.dataTables_filter input{
+	font-size: medium !important;
+	font-family: 'Josefin Sans', sans-serif !important;
+}
+

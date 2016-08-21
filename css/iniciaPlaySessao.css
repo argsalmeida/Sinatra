@@ -1,0 +1,295 @@
+/*log + detalhes cena coluna*/
+#logColuna{
+	margin-top: 1%;
+	float: left;
+	width: 40%;
+	border-right: solid 1px #CCC;
+	min-width: 400px;
+}
+
+/* div com o numero de players activos e botão iniciar */
+#preparaIniciarSessaoDiv{
+	display: inline-block;
+	width: 100%;
+	min-width: 368px;
+}
+
+/* div com a indicação do número de player activos */
+#numeroPlayersActivosDiv{
+	float: left;
+	display: inline-block;
+	margin-left: 2%;
+	padding-left: 2%;	
+	padding-right: 2%;	
+	border: solid 1px #aed0ea;
+	min-width: 138px;
+}
+
+#numeroPlayersActivos{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+	background-color: transparent;
+	border: 0;
+	width: 10px;
+	
+}
+/* botão iniciar */
+#inciarSessaoButtonDiv{
+	float: right;
+	display: inline-block;
+	margin-right: 1%;
+}
+
+#iniciaSessaoButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+	padding: 15px;
+	background-color: red;
+}
+
+/* dados da sessão */
+#dadosGeraisSessao{
+	margin: 10% 18%;
+	min-width: 318px;
+/*	min-height: 318px;*/
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: large;
+}
+
+/* dados */
+#nomeTerapeutaSessao,
+#tipoExercicioSessao,
+#nomeHistoriaSessao,
+#tipoActividadeSessao{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+	background-color: transparent;
+	border: 0;
+}
+
+#nomeCriancasSessaoText{
+	vertical-align: top;
+}
+
+#nomeCriancasSessao{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+	background-color: transparent;
+	border: 0;
+	resize: none;
+	overflow: hidden;
+	width: auto;
+}
+
+/*sessao coluna*/
+#sessaoColuna{
+	margin-top: 1%;
+	float: left;
+	padding-left: 1%;
+	width: 58%;
+	min-width: 593px;
+}
+
+#detalhesSessaoTitle{
+	margin-top: 0px;
+	width: auto;
+	text-align: center;
+	min-width: 593px;
+}
+#arvoreHistoricoRightDiv{
+	overflow: auto;
+/*	height: 500px;*/
+	min-width: 593px;
+}
+
+.nomeCenaHistorico{
+	padding-left: 5%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.introducaoHistorico,
+.tipoActividadeHistorico,
+.reforcoPontuacaoHistorico{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+	padding-left: 10%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.actividadeGestoHistorico,
+.actividadeQuestionarioHistorico{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+	padding-left: 15%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.perguntasQuestionarioHistorico{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+	padding-left: 20%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+/*******************************************/
+#arvoreHistoricoSessaoLeftDiv{
+	border: solid 2px #aed0ea;
+	margin-top: 1%;
+	overflow: auto;
+/*	height:45%;*/
+	margin-left: 2%;
+	margin-right: 1%;
+}
+
+#anotacaoSessaoDiv{
+/*	height:54%; */
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+#anotacaoSessaoTextArea{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+	border: solid 2px #aed0ea;
+	resize: none;
+	overflow: auto;
+	background: transparent;
+	width: 100%;
+	height: 200px;
+	margin-top: 2%;
+}
+
+#inserirAnotacaoDiv{
+	display: inline-block;
+	float: left;
+	width: 100%;
+}
+
+#inserirAnotacaoTextArea{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: medium;
+	border: solid 2px #aed0ea;
+	width: 86%;
+	margin-right: 1%;
+	display: inline-block;
+	float: left;
+}
+
+#inserirAnotacaoButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	display: inline-block;
+	float: left;
+}
+
+#introducaoSessaoDiv,
+#introducaoImagemSessaoDiv,
+#reforcoPositivoSessaoDiv,
+#reforcoPositivoImagemSessaoDiv,
+#reforcoNegativoSessaoDiv,
+#reforcoNegativoImagemSessaoDiv{
+	text-align: center;
+}
+
+#introducao,
+#introducaoImagem,
+#reforcoPositivo,
+#reforcoPositivoImagem,
+#reforcoNegativo,
+#reforcoNegativoImagem{
+	width: 320px;
+	height: 240px;
+}
+
+#seguinteButtonDiv{
+	float: right;
+}
+
+#seguinteButton{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: large;
+}
+
+/* tabela de gestos */
+#tabelaGestosDiv{
+	margin-top: 3%;
+}
+
+#tituloTabelaGestos{
+	text-align: center;
+	font-size: 20px;
+	color: blue;
+}
+
+#tabelaGestos{
+	padding: 0px;
+}
+
+#demo{
+	overflow: auto;
+}
+
+/* tabela de questionários */
+#tabelaQuestionariosDiv{
+	margin-top: 3%;
+}
+
+#tituloTabelaQuestionarios{
+	text-align: center;
+	font-size: 20px;
+	color: blue;
+}
+
+#tabelaQuestionarios{
+	padding: 0px;
+}
+
+/* tabela da pontuação */
+#tabelaPontuacaoDiv{
+	margin-top: 3%;
+}
+
+#tituloTabelaPontuacao{
+	text-align: center;
+	font-size: 20px;
+	color: blue;
+}
+
+#tabelaPontuacao{
+	padding: 0px;
+}
+
+#reforcoButtons{
+	text-align: center;
+}
+
+#reforcoPositivoButton,
+#reforcoNegativoButton{
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/* dialog com a progress bar */
+#progressbar .ui-progressbar-value {
+	background-color: #deedf7;
+}
+
+.no-close .ui-dialog-titlebar-close {
+	display: none;
+}

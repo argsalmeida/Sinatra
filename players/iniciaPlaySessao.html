@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Sinatra - Benvindo! </title>
+	</head>
+		<!-- Importacao dos ficheiros necessarios -->
+		<!-- CSS -->
+		<link href="../css/main.css" rel="stylesheet" type="text/css">
+		<link href="../css/iniciaPlaySessao.css" rel="stylesheet" type="text/css">
+			<!-- datatable -->
+		<link href="../css/dataTables/demo_page.css" rel="stylesheet" type="text/css">
+		<link href="../css/dataTables/demo_table.css" rel="stylesheet" type="text/css"> 
+			<!-- custom theme jquery -->
+		<link href="../css/jQueryCustom/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+			<!-- custom font -->
+		<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:700|Amatic+SC:700" rel="stylesheet" type="text/css" />
+		<!-- JQuery -->
+		<script type="text/javascript" src="../js/jQuery/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="../js/jQuery/jquery-ui-1.10.4.custom.js"></script>
+			<!-- scroll -->
+		<script type="text/javascript" src="../js/jQuery/jquery.scrollTo.js"></script>
+			<!-- datatable -->
+		<script type="text/javascript" src="../js/dataTables/jquery.dataTables.js"></script>
+		<!-- Scripts -->
+		<script type="text/javascript" src="../js/requests/ajaxRequest.js"></script>
+		<script type="text/javascript" src="../js/players/iniciaPlaySessao.js"></script>
+		<script type="text/javascript" src="../js/players/playClienteTerapeuta.js"></script>
+		<script type="text/javascript" src="../js/requests/sessaoRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/sessaoXML.js"></script>
+		<script type="text/javascript" src="../js/requests/criancasRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/criancasXML.js"></script>
+		<script type="text/javascript" src="../js/requests/registosRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/registosXML.js"></script>
+		<script type="text/javascript" src="../js/requests/historicoRequests.js"></script>
+		<script type="text/javascript" src="../js/requests/xml/historicoXML.js"></script>
+		<script type="text/javascript" src="../js/sharedFunctions.js"></script>
+	<body>
+		<div class="main">
+			<div>
+				<div id="banner">
+					<img src="../imagens/sinatraMainSmall.png" height="50px" alt="logo"/>
+				</div>
+				<div id="logoutDiv">
+					<button id="logoutButton" type="button">Logout</button>
+				</div>
+			</div>
+			<div id="content">
+				<div id="logColuna">
+					<!-- div que contém os botões para iniciar a sessão -->
+					<div id="preparaIniciarSessaoDiv" hidden>
+						<div id="numeroPlayersActivosDiv">
+							<p> Número de players activos: 
+								<input type="text" id="numeroPlayersActivos" value="0" readonly/>
+							</p>
+						</div>
+						<div id="inciarSessaoButtonDiv">
+							<input type="button" id="iniciaSessaoButton" value="Iniciar Sessão" disabled/>
+						</div>						
+					</div>
+					<!-- div com os dados dos participantes e componentes gerais da sessao -->
+					<div id="dadosGeraisSessao" hidden>
+						<p> Nome do Terapeuta: 
+							<input type="text" id="nomeTerapeutaSessao" readonly/>
+						</p>
+						<p id="nomeCriancasSessaoText"> Nome das Crianças: 
+							<textarea type="text" id="nomeCriancasSessao" readonly></textarea>
+						</p>
+						<p> Tipo de Exercício: 
+							<input type="text" id="tipoExercicioSessao" readonly/>
+						</p>
+					</div>
+					<!-- div que contém os dados para a sessao -->
+					<div id="arvoreHistoricoLeftDiv" hidden>
+						<div id="arvoreHistoricoSessaoLeftDiv"></div>
+					</div>
+					<!-- div com os dados dos participantes e componentes gerais da sessao -->
+					<div id="anotacaoSessaoDiv" hidden>
+						<textarea type="text" id="anotacaoSessaoTextArea" readonly></textarea>
+						<div id="inserirAnotacaoDiv">
+							<input type="text" id="inserirAnotacaoTextArea"/>
+							<input type="button" id="inserirAnotacaoButton" value="Inserir" disabled/>
+						</div>
+					</div>
+				</div>
+				<div id="sessaoColuna">
+					<!-- div que contém os dados para a sessao -->
+					<div id="arvoreHistoricoRightDiv" hidden>
+						<div id="detalhesSessaoTitle">
+							<h3> Detalhes da Sessão </h3>
+						</div>
+						<div id="arvoreHistoricoSessaoRightDiv"></div>
+					</div>
+					<!-- div que contém os videos para a introducao -->
+					<div id="introducaoSessaoDiv" hidden>
+<!--						<video id='introducao' width="320" height="240" controls preload>
+							<source id='scrmp4' type="video/mp4">
+							<source id='scrwebm' type="video/webm">
+						</video>
+-->
+					</div>
+					<!-- div que contém as imagens para a introducao -->
+					<div id="introducaoImagemSessaoDiv" hidden>
+						<img id='introducaoImagem' width="320" height="240"/>
+					</div>
+					<!-- div com os botões para escolher qual reforço mostrar -->
+					<div id="reforcoButtons" hidden>
+						<input type=button id="reforcoPositivoButton" value="Reforço Positivo">
+						<input type=button id="reforcoNegativoButton" value="Reforço Negativo">
+					</div>
+					<!-- div que contém os videos para o reforco positivo -->
+					<div id="reforcoPositivoSessaoDiv" hidden>
+<!--						<video id='reforcoPositivo' width="320" height="240" controls>
+							<source id='scrRPmp4' type="video/mp4">
+							<source id='scrRPwebm' type="video/webm">
+						</video>
+-->
+					</div>
+					<!-- div que contém as imagens para o reforco positivo -->
+					<div id="reforcoPositivoImagemSessaoDiv" hidden>
+						<img id='reforcoPositivoImagem' width="320" height="240" />
+						</video>
+					</div>
+					<!-- div que contém os dados para o reforco negativo -->
+					<div id="reforcoNegativoSessaoDiv" hidden>
+<!--						<video id='reforcoNegativo' width="320" height="240" controls>
+							<source id='scrRNmp4' type="video/mp4">
+							<source id='scrRNwebm' type="video/webm">
+						</video>
+-->
+					</div>
+					<!-- div que contém as imagens para o reforco positivo -->
+					<div id="reforcoNegativoImagemSessaoDiv" hidden>
+						<img id='reforcoNegativoImagem' width="320" height="240" />
+						</video>
+					</div>
+					<!-- botão seguinte -->
+					<div id="seguinteButtonDiv" hidden>
+						<input type="button" id="seguinteButton" value="Seguinte" disabled/>
+					</div>
+					<!-- div que contém a tabela dos gestos -->
+					<div id="tabelaGestosDiv" hidden>
+						<div id="tituloTabelaGestos"></div>
+						<div id="demo">
+							<table cellpadding="0" cellspacing="0" border="0" class="display" id="tabelaGestos" width="100%">
+								<thead>
+									<tr>
+										<th>Nome da Criança</th>
+										<th>Sim</th>
+										<th>Desta vez passa</th>
+										<th>Não</th>
+                                        <th>Pontuação</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- div que contém a tabela dos questionários -->
+					<div id="tabelaQuestionariosDiv" hidden>
+						<div id="tituloTabelaQuestionarios"></div>
+						<div id="demo">
+							<table cellpadding="0" cellspacing="0" border="0" class="display" id="tabelaQuestionarios" width="100%">
+								<thead>
+									<tr id="rowHead">
+										<!-- adicionado dinamicamente - nome das crianças -->
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- div que contém a tabela da pontuação -->
+					<div id="tabelaPontuacaoDiv" hidden>
+						<div id="tituloTabelaPontuacao"><p> Pontuação </p></div>
+						<div id="demo">
+							<table cellpadding="0" cellspacing="0" border="0" class="display" id="tabelaPontuacao" width="100%">
+								<thead>
+									<tr>
+										<td></td>
+										<td>&#9733;</td>
+										<td>&#9733;&#9733;</td>
+										<td>&#9733;<br>&#9733;&#9733;</td>
+										<td>&#9733;&#9733;<br>&#9733;&#9733;</td>
+										<td>&#9733;&#9733;<br>&#9733;&#9733;&#9733;</td>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div id="progressDialog" title="A guardar os dados">
+					<div id="progressbar"></div>
+				</div>
+				<div id="coDrawRunning" hidden> 
+					Está iniciado o CoDraw!
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

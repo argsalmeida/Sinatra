@@ -1,0 +1,278 @@
+#contentRegistos{
+    float: left; 
+    width: 100%;
+    height: 85vh;
+    border: solid #0191d8 3px;
+    background: #CCE0FF;
+    padding: auto;
+    margin-bottom: 4%;
+    min-height: 528px;
+}
+
+.chart_loading {
+    position:absolute; 
+    bottom:0%; 
+    left:0%; 
+    height:10%; 
+    width:10%; 
+    padding:0; 
+    margin:0; 
+    z-index:1000; 
+    text-align:center;
+}
+
+#buttonsDiv{
+    text-align: center;
+    width: 100%;
+    font-size: small;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#resumoSessaoButton,
+#logAnotacoesButton,
+#dadosSessaoButton,
+#graficosSessaoButton{
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#todosDadosSessaoDiv{
+    width: 100%;
+    text-align: center;
+}
+
+/* gráficos */
+#graphsDiv{
+    position:relative; 
+    width:100%;
+    height:400px; 
+    margin-bottom:20px;
+}
+
+#chart_div_static,
+#chart_div_static_sessoes,
+#chart_div_static_cenas,
+#chart_div_static_gestos,
+#chart_div_static_questionarios,
+#chart_div_static_perguntas{
+    position:relative; 
+    height:90%; 
+    width:90%;
+    display: table;
+    margin: 0 auto;
+}
+
+.ui-widget-content{
+    background: transparent none 50% top repeat-x !important;
+}
+
+.ui-state-highlight{
+    border: 1px solid #0191d8 !important;
+    background: #3baae3 url(images/ui-bg_highlight-soft_25_ffef8f_1x100.png) 50% top repeat-x !important;
+}
+
+/* resumo */
+#nomeTerapeutaSessao,
+#tipoExercicioSessao,
+#nomeHistoriaSessao,
+#tipoActividadeSessao{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: medium;
+    background-color: transparent;
+    border: 0;
+}
+
+#nomeCriancasSessaoText{
+    vertical-align: top;
+}
+
+#nomeCriancasSessao{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: medium;
+    background-color: transparent;
+    border: 0;
+    resize: none;
+    overflow: hidden;
+    width: auto;
+}
+
+/* resumo da sessão */
+#resumoSessaoDiv{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: large;
+}
+
+/* dados Sessao */
+#dadosDiv{
+    text-align: center;
+    margin-left: -7%;
+    
+}
+.nomeCenaHistorico{
+    padding-left: 5%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: medium;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.introducaoHistorico,
+.tipoActividadeHistorico,
+.reforcoPontuacaoHistorico{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: medium;
+    padding-left: 10%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.actividadeGestoHistorico,
+.actividadeQuestionarioHistorico{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: medium;
+    padding-left: 15%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.perguntasQuestionarioHistorico{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: medium;
+    padding-left: 20%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* log/anotacoes*/
+#logAnotacoesDiv{
+
+}
+
+#logColuna{
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-left: 3%;
+    float:left;
+    width: 43%;
+    border-right: solid 1px #CCC;
+    min-width: 400px;
+    text-align: left;
+}
+
+.logSessao{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.anotacoesSessao{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/******************* CRIANCAS **************************/
+#nomeCriancaDiv{
+    text-align: center;
+}
+
+#listaSessoesButton,
+#listaCenasButton,
+#listaGestosButton,
+#listaQuestionariosButton,
+#listaPerguntasButton{
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.tabgraphButtons{
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 2%;
+}
+
+#sessoesGraphDiv,
+#cenasGraphDiv,
+#gestosGraphDiv,
+#questionariosGraphDiv,
+#perguntasGraphDiv{
+    position:relative; 
+    width:100%;
+    height:375px; 
+    margin-bottom:10px;
+}
+
+.dataTables_filter input{
+    font-size: medium !important;
+    font-family: 'Josefin Sans', sans-serif !important;
+}
+
+#labelSessaoTabelaSessao,
+#labelCenaTabelaSessao,
+#labelGestoTabelaSessao,
+#labelQuestionarioTabelaSessao,
+#labelPerguntaTabelaSessao,
+#labelCenaTabelaCena,
+#labelGestoTabelaCena,
+#labelQuestionarioTabelaCena,
+#labelPerguntaTabelaCena,
+#labelQuestionarioTabelaQuestionario,
+#labelPerguntaTabelaQuestionario{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    color: black;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+#labelSessaoTabelaSessao:disabled,
+#labelCenaTabelaSessao:disabled,
+#labelGestoTabelaSessao:disabled,
+#labelQuestionarioTabelaSessao:disabled,
+#labelPerguntaTabelaSessao:disabled,
+#labelCenaTabelaCena:disabled,
+#labelGestoTabelaCena:disabled,
+#labelQuestionarioTabelaCena:disabled,
+#labelPerguntaTabelaCena:disabled,
+labelQuestionarioTabelaQuestionario:disabled,
+#labelPerguntaTabelaQuestionario:disabled{
+    cursor: default;
+}
+
+#sessoesCenaNext,
+#cenasGestosQuestionarioNext,
+#questionariosPeguntasNext,
+#cenasGestosQuestionarioNextCena,
+#questionariosPeguntasNextCena,
+#questionariosPeguntasNextQuestionario{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    color: black;
+    border: none;
+    background: transparent;
+    cursor: default;
+}

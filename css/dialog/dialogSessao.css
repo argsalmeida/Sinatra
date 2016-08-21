@@ -1,0 +1,190 @@
+.modal {
+	font-family: 'Josefin Sans', sans-serif;
+	background-color:#CCE0FF;
+	display:none;
+	width:initial;
+	/*padding:24px;*/
+	text-align:left;
+	border:3px solid #aed0ea; 
+	opacity:0.8;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	-moz-box-shadow: 0 0 50px #ccc;
+	-webkit-box-shadow: 0 0 50px #ccc;
+}
+
+#mensagem{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	/*padding-left:1em; */
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	word-wrap: break-word;
+	text-align: left;
+	padding-left: 2%;
+}
+
+#mensagemAlternativa{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	/*padding-left:1em; */
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	word-wrap: break-word;
+	padding-left: 2%;
+}
+
+/* titulo do dialog com os detalhes da cena */
+#titleDialogDetalhesCenasHistoria, #titleDialogPedirNrGestos, #titleDialogNrRepeticoes, #titleDialogPerguntasQuestionario{
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border:1px solid #aed0ea; 
+	margin-top: 0.5%;
+	margin-left: 0.5%;
+	margin-right: 0.5%;
+	margin-bottom: 0.5%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	font-size: 20px;
+}
+
+#titleNomeCenaDetalhes, #titleNrGestos, #titleNrRepeticoes, #titlePerguntasQuestionario{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+#detalhesDialogCenasHistoria, #pedirNumeroGestosDiv, #numeroRepeticoesGesto, #perguntasQuestionario{
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border:1px solid #aed0ea; 
+	margin-top: 0.5%;
+	margin-left: 0.5%;
+	margin-right: 0.5%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	max-height: 300px;
+	overflow: auto;
+}
+
+.detalhesCenaHistoria{
+	font-family: 'Josefin Sans', sans-serif;
+	background-color: transparent;
+	border: none;
+	font-size: 14px;
+}
+/*
+#seta{
+	background: transparent; 
+	border: none;
+	padding-left: 10%;
+}
+
+#seta:focus{
+	outline:none;
+	border: transparent;
+}
+*/
+#actividade{
+	padding-left: 5%;
+	margin-bottom: 0.5%;
+	margin-top: 1%;
+}
+
+.detalhes{
+	padding-left: 10%;
+}
+
+#reforcosDetalhes{
+	padding-left: 1%;
+	display: inline-block;
+	width: 98%;
+}
+
+#reforcoPositivo, #reforcoNegativo{
+	width: 48%;
+	display: inline-block;
+}
+
+#reforcoPositivoThumbnail, #reforcoNegativoThumbnail{
+	padding-left:15%;
+	width:50px; 
+	height:50px;
+}
+
+
+#dialogButtons{
+	text-align: center;
+}
+
+
+#okDialogDetalhesCenasHistoria, #okDialogNomeHistoriaExistente, #okDialogThumbnailNaoSuportado, #okDialogEtiquetaHistoriaExistente, #okDialogEtiquetaHistoriaExistenteSeleccionada, #okDialogNomeHistoriaExistente, #okDialogPedirNrGestos, #cancelarDialogPedirNrGestos, #okDialogNrRepeticoes, #okDialogQuestionarioExistente, #okDialogPerguntaExistente, #okDialogGestoExistente, #okDialogEtiquetaCenaExistente, #okDialogEtiquetaCenaExistenteSeleccionada, #simDialogMudarTipoActividadeAviso, #naoDialogMudarTipoActividadeAviso{
+	font-family: 'Josefin Sans', sans-serif;
+	padding-top: 6px;
+	padding-bottom: 6px;
+
+}
+
+#nomeHistoriaRepetido, #thumbnailNaoSuportado, #etiquetaHistoriaRepetida, #etiquetaHistoriaExistenteRepetida, #nomeCenaRepetido, #nomeQuestionarioRepetido, #nomePerguntaRepetida, #nomeGestoRepetido, #etiquetaCenaRepetida, #etiquetaCenaExistenteRepetida, #avisoTipoActividaded{
+	text-align: center;
+}
+
+#numeroGestosPedidoP{
+	padding-left:2%; 
+	word-wrap: break-word;
+}
+
+
+#nrRepeticoesGestoDetalhes, .detalhesCenaHistoriaRepeticao{
+	background-color: transparent;
+	border: none;
+	width: 30px;
+}
+
+#perguntasQuestionarioDetalhes{
+	background-color: transparent;
+	border: none;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/*
+#okDialogPerguntasQuestionario, #okDialogDetalhesActividadeBibliotecaCenas {
+	font-size: 16px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.detalhesCenaHistoriaRepeticao{
+	background-color: transparent;
+	border: none;
+	width: 30px;
+}
+
+
+
+
+#inputboxes, #inputboxesPerguntas{
+	max-height: 450px;
+	overflow: auto;
+	text-indent: 10px;
+}
+
+#inputboxesDetalhesCenasHistoria{
+	max-height:450px;
+	overflow: auto;
+	border: 1px solid #aed0ea;*/
+	/*text-indent: 10px;*/
+/*}
+
+#inputBoxDetalhesActividadeBibliotecaCenas{
+	overflow: auto;
+	border: 1px solid #aed0ea;
+	text-indent: 10px;
+}*/
